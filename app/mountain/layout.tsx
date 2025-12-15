@@ -6,7 +6,7 @@ const siteName = 'Mountain';
 const siteTitle = 'Mountain - Digital Marketing Agency';
 const siteDescription = "Mountain is a leading digital marketing agency specializing in SEO, social media marketing, content creation, PPC advertising, and brand strategy. We help businesses grow their online presence and achieve measurable results through data-driven marketing solutions.";
 const siteKeywords = 'Mountain Agency, digital marketing agency, SEO services, social media marketing, content marketing, PPC advertising, brand strategy, online marketing, digital advertising, marketing agency, social media management, search engine optimization';
-const ogImage = `/mountain/icon0.svg`;
+const ogImage = `/mountain/logo.webp`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

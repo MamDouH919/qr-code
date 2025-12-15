@@ -6,7 +6,7 @@ const siteName = 'Arab Clinic';
 const siteTitle = 'Arab Clinic - Medical Center';
 const siteDescription = "Arab Clinic Center, established in 2018, is one of Egypt's premier healthcare providers with branches in Qalyubia, Obour City, Shebin El Qanater, and Meet Ghamr. We offer exceptional medical care across all specialties with highly qualified doctors and state-of-the-art facilities.";
 const siteKeywords = 'Arab Clinic, medical center Egypt, healthcare Qalyubia, Abu Zaabal clinic, Obour City hospital, Shebin El Qanater medical center, Meet Ghamr clinic, Egyptian healthcare, medical specialists Egypt, quality healthcare, عيادة العرب, مركز طبي مصر';
-const ogImage = `/arab-clinic/icon0.svg`;
+const ogImage = `/arab-clinic/logo.webp`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
