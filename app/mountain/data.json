@@ -1,6 +1,37 @@
 {
-    "name": "mountain",
+    "id": "mountain",
+    "active": true,
+    "name": "Mountain",
     "title": "Mountain",
     "description": "Mountain",
-    "keywords": "mountain"
+    "keywords": "mountain",
+    "color": "#000",
+    "countryCode": "+2",
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/@m.mountain.agency/"
+        },
+        {
+            "code": "IG",
+            "link": "https://www.instagram.com/mm_adv_agency"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "مونتين",
+                "en": "Mountain"
+            },
+            "numbers": [
+                {
+                    "number": "+201060168136",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ]
+        }
+    ]
 }

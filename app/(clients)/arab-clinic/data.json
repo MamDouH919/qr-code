@@ -10,26 +10,18 @@
     "socials": [
         {
             "code": "FB",
-            "name": "Arab Clinic Hospital",
-            "nameAr": "مستشفي أراب كلينيك",
             "link": "https://www.facebook.com/ArabClinicEG?mibextid=LQQJ4d"
         },
         {
             "code": "IG",
-            "name": "Arab Clinic Hospital",
-            "nameAr": "مستشفي أراب كلينيك",
             "link": "https://www.instagram.com/arabcliniceg?igsh=MWg2MzJsN3JnaDRz&utm_source=qr"
         },
         {
             "code": "WS",
-            "name": "Arab Clinic Hospital",
-            "nameAr": "مستشفي أراب كلينيك",
             "link": "https://arabclinic.net"
         },
         {
             "code": "WG",
-            "name": "whatsapp Group | Obour",
-            "nameAr": "فرع العبور | whatsapp Group",
             "link": "https://chat.whatsapp.com/HDD9aURskkFGV8vo3GxBPb"
         }
     ],

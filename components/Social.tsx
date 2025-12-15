@@ -17,9 +17,7 @@ import {
 
 interface SocialMediaLink {
     code: string;
-    name: string;
     link: string;
-    nameAr?: string;
 }
 
 // TikTok Icon
@@ -39,43 +37,50 @@ type SocialConfig = {
     name: string;
     icon: React.ReactNode;
     gradient: string;
+    nameAr: string;
 };
 
 const SOCIAL_CONFIG: SocialConfig[] = [
     {
         code: 'FB',
         name: 'Facebook',
+        nameAr: 'فيسبوك',
         icon: <Facebook />,
         gradient: 'linear-gradient(135deg, #1877F2, #0D5DBF)'
     },
     {
         code: 'IG',
         name: 'Instagram',
+        nameAr: 'إنستغرام',
         icon: <Instagram />,
         gradient:
             'linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4)'
     },
     {
         code: 'X',
-        name: 'Twitter',
+        name: 'X',
+        nameAr: 'X',
         icon: <X />,
         gradient: 'linear-gradient(135deg, #000000, #000000)'
     },
     {
         code: 'LI',
         name: 'LinkedIn',
+        nameAr: 'لينكداين',
         icon: <LinkedIn />,
         gradient: 'linear-gradient(135deg, #0077B5, #005885)'
     },
     {
         code: 'YT',
         name: 'YouTube',
+        nameAr: 'يوتيوب',
         icon: <YouTube />,
         gradient: 'linear-gradient(135deg, #FF0000, #CC0000)'
     },
     {
         code: 'TK',
         name: 'TikTok',
+        nameAr: 'تيكتوك',
         icon: <TikTokIcon />,
         gradient:
             'linear-gradient(135deg, #000000, #EE1D52, #69C9D0)'
@@ -83,12 +88,14 @@ const SOCIAL_CONFIG: SocialConfig[] = [
     {
         code: 'WG',
         name: 'WhatsApp Group',
+        nameAr: 'مجموعة واتس اب',
         icon: <WhatsApp />,
         gradient: 'linear-gradient(135deg, #25D366, #128C7E)'
     },
     {
         code: 'WS',
         name: 'Website',
+        nameAr: 'موقع الويب',
         icon: <Language />,
         gradient: 'linear-gradient(135deg, #6366F1, #8B5CF6)'
     }
@@ -107,7 +114,6 @@ export default function SocialMediaLinks({
                 links.map(l => [
                     l.code,
                     {
-                        name: isArabic ? l.nameAr : l.name,
                         link: l.link
                     }
                 ])
@@ -120,7 +126,6 @@ export default function SocialMediaLinks({
         .filter(social => linksMap[social.code])
         .map(social => ({
             ...social,
-            name: linksMap[social.code].name, // ← from API
             url: linksMap[social.code].link   // ← from API
         }));
 
@@ -161,6 +166,9 @@ export default function SocialMediaLinks({
                         '&:active': {
                             transform: 'translateY(0)',
                         },
+                        '& svg': {
+                            fontSize: "25px !important",
+                        },
 
                         '@keyframes fadeInUp': {
                             from: { opacity: 0, transform: 'translateY(24px)' },
@@ -168,7 +176,7 @@ export default function SocialMediaLinks({
                         }
                     }}
                 >
-                    {social.name}
+                    {isArabic ? social.nameAr : social.name}
                 </Button>
             ))}
         </Stack>

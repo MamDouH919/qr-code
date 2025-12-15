@@ -48,7 +48,7 @@ type Branch = {
         en: string;
     };
     numbers: BranchNumber[];
-    location: string;
+    location?: string;
 }
 
 const translations = {
@@ -83,9 +83,9 @@ export default function BranchLocations({
     branches: Branch[],
     splitCode: string,
 }) {
-    const branchTheme = useTheme();
-    const isArabic = branchTheme.direction === 'rtl';
-    const translationsData = branchTheme.direction === 'rtl' ? translations.ar : translations.en;
+    const theme = useTheme();
+    const isArabic = theme.direction === 'rtl';
+    const translationsData = theme.direction === 'rtl' ? translations.ar : translations.en;
     const [open, setOpen] = useState(false);
     const [numbers, setNumbers] = useState<string[]>([]);
     const [typeOfContact, setTypeOfContact] = useState<string>('mobile');
@@ -120,7 +120,6 @@ export default function BranchLocations({
     return (
         <Box
             sx={{
-                minHeight: '100vh',
                 py: 4,
             }}
         >
@@ -280,17 +279,19 @@ export default function BranchLocations({
                                                     {translationsData.whatsapp}
                                                 </Button>
                                             </Grid>
-                                            <Grid size={{ xs: 12 }}>
-                                                <Button
-                                                    fullWidth
-                                                    variant="outlined"
-                                                    onClick={() => handleLocation(branch.location)}
-                                                    color='primary'
-                                                    startIcon={<Navigation size={18} />}
-                                                >
-                                                    {translationsData.location}
-                                                </Button>
-                                            </Grid>
+                                            {branch.location &&
+                                                <Grid size={{ xs: 12 }}>
+                                                    <Button
+                                                        fullWidth
+                                                        variant="outlined"
+                                                        onClick={() => handleLocation(branch?.location ?? "")}
+                                                        color='primary'
+                                                        startIcon={<Navigation size={18} />}
+                                                    >
+                                                        {translationsData.location}
+                                                    </Button>
+                                                </Grid>
+                                            }
                                         </Grid>
                                     </CardContent>
                                 </Paper>
