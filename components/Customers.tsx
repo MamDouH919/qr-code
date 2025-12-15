@@ -60,12 +60,12 @@ const ImageCard = styled(Box)(({ theme }) => ({
 
 // Sample customer images data
 const customerImages = [
-    { id: 1, src: "/arab-clinic/profile.jpg", alt: 'Arab Clinic' },
-    { id: 2, src: "/arab-clinic/profile.jpg", alt: 'Retail customer' },
-    { id: 3, src: "/arab-clinic/profile.jpg", alt: 'Healthcare customer' },
-    { id: 4, src: "/arab-clinic/profile.jpg", alt: 'Real estate customer' },
-    { id: 5, src: "/arab-clinic/profile.jpg", alt: 'Restaurant customer' },
-    { id: 6, src: "/arab-clinic/profile.jpg", alt: 'Retail customer' },
+    { id: 1, src: "/arab-clinic/logo.webp", alt: 'Arab Clinic' },
+    { id: 2, src: "/arab-clinic/logo.webp", alt: 'Retail customer' },
+    { id: 3, src: "/arab-clinic/logo.webp", alt: 'Healthcare customer' },
+    { id: 4, src: "/arab-clinic/logo.webp", alt: 'Real estate customer' },
+    { id: 5, src: "/arab-clinic/logo.webp", alt: 'Restaurant customer' },
+    { id: 6, src: "/arab-clinic/logo.webp", alt: 'Retail customer' },
 ];
 
 const CustomerImagesSection = () => {

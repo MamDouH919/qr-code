@@ -257,6 +257,7 @@ export default function BranchLocations({
                                                     color='info'
                                                     onClick={() => {
                                                         handleOpen();
+                                                        setTypeOfContact('mobile');
                                                         setNumbers(branch.numbers.filter((number) => number.type.includes('mobile')).map((number) => number.number));
                                                     }}
                                                     startIcon={<PhoneOutlined />}

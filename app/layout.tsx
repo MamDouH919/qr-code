@@ -14,12 +14,12 @@ const cairo = Cairo({
   display: 'swap'
 });
 
-const siteUrl = 'https://qr.mountain-egy.site/'; // Update with your actual domain
+const siteUrl = 'https://qr-test.mountain-egy.site/'; // Update with your actual domain
 const siteName = 'QR Code Generator';
 const siteTitle = 'Custom QR | Digital Business Cards';
 const siteDescription = 'Generate custom QR codes linked to personalized client pages. Perfect for businesses, restaurants, and individuals. Create digital business cards with QR codes instantly.';
 const siteKeywords = 'QR Code Generator, Custom QR for business, Digital business card QR, QR for shops and restaurants, personalized QR codes, client pages, QR code maker, free QR generator, business QR codes, restaurant QR menu';
-const ogImage = `/mountain/profile.jpg`; // Update with your OG image path
+const ogImage = `/mountain/logo.webp`; // Update with your OG image path
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   authors: [{ name: siteName }],
   creator: siteName,
   publisher: siteName,
-  generator: "v0.app",
+  generator: "mountain-egy.site",
   robots: {
     index: true,
     follow: true,
@@ -107,7 +107,7 @@ const jsonLd = {
     url: siteUrl,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteUrl}/mountain/profile.jpg`,
+      url: `${siteUrl}/mountain/logo.webp`,
     },
     contactPoint: {
       '@type': 'ContactPoint',

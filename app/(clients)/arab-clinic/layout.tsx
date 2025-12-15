@@ -74,7 +74,7 @@ const jsonLd = {
     name: siteName,
     description: siteDescription,
     url: siteUrl,
-    logo: `/arab-clinic/profile.jpg`,
+    logo: `/arab-clinic/logo.webp`,
     image: ogImage,
     foundingDate: '2018',
     telephone: '+201550141552',

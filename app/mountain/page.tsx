@@ -60,13 +60,13 @@ const Page = () => {
                 <Stack spacing={0}>
                     {/* HEADER */}
                     <BackgroundContainer>
-                        <BackgroundImage backgroundimage={`/${folderName}/profile.jpg`}>
+                        <BackgroundImage backgroundimage={`/${folderName}/logo.webp`}>
                             <Overlay />
                         </BackgroundImage>
 
                         <ProfileImageContainer>
                             <ProfileImage
-                                src={`/${folderName}/profile.jpg`}
+                                src={`/${folderName}/logo.webp`}
                                 alt="Profile"
                             />
                         </ProfileImageContainer>
