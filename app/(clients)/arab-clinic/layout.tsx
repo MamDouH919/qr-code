@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 
-const siteUrl = 'https://arabclinic.com';
+const siteUrl = 'https://test-qr.mountain-egy.site/';
 const siteName = 'Arab Clinic';
 const siteTitle = 'Arab Clinic - Medical Center';
 const siteDescription = "Arab Clinic Center, established in 2018, is one of Egypt's premier healthcare providers with branches in Qalyubia, Obour City, Shebin El Qanater, and Meet Ghamr. We offer exceptional medical care across all specialties with highly qualified doctors and state-of-the-art facilities.";

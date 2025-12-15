@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 
-const siteUrl = 'https://mountainagency.com';
+const siteUrl = 'https://test-qr.mountain-egy.site/';
 const siteName = 'Mountain';
 const siteTitle = 'Mountain - Digital Marketing Agency';
 const siteDescription = "Mountain is a leading digital marketing agency specializing in SEO, social media marketing, content creation, PPC advertising, and brand strategy. We help businesses grow their online presence and achieve measurable results through data-driven marketing solutions.";

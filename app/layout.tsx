@@ -87,7 +87,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  manifest: '/site.webmanifest',
+  manifest: '/mountain/manifest.json',
   other: {
     'language': 'English',
     'revisit-after': '7 days',
