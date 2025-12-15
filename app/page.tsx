@@ -36,6 +36,7 @@ import { CacheProvider } from '@emotion/react';
 import createEmotionCache from '@/lib/create-emotion-cache';
 import getTheme from '@/lib/theme';
 import Image from 'next/image';
+import CustomerImagesSection from '@/components/Customers';
 
 
 
@@ -424,6 +425,8 @@ export default function QRGeneratorLanding() {
                             </Grid>
                         </Container>
                     </Box>
+
+                    <CustomerImagesSection />
 
                     {/* Testimonials */}
                     {/* <Container maxWidth="lg" sx={{ py: 10 }}>
