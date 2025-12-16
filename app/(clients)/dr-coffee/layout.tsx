@@ -6,8 +6,10 @@ const siteName = "Dr Coffee - بن الدكتور";
 const siteTitle = "Dr Coffee - بن الدكتور | كافيه وقهوة مختصة في مدينة نصر";
 const siteDescription =
   "دكتور كوفي - بن الدكتور، كافيه وقهوة مختصة في مدينة نصر. بن محمص طازج، قهوة إسبريسو، لاتيه، ومشروبات ساخنة وباردة بأعلى جودة.";
+
 const siteKeywords =
   "Dr Coffee, بن الدكتور, دكتور كوفي, كافيه مدينة نصر, قهوة مختصة مدينة نصر, coffee shop Nasr City, specialty coffee Egypt";
+  
 const ogImage = "/dr-coffee/logo.webp";
 const icon = "/dr-coffee/favicon.ico";
 
