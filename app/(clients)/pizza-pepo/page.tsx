@@ -24,7 +24,7 @@ import LanguageIcon from "@/components/LanguageIcon";
 
 const folderName = "arab-clinic";
 
-const ArabClinicPage = () => {
+const Page = () => {
     const [ready, setReady] = useState(false);
     const [language, setLanguage] = useState("ar");
 
@@ -89,4 +89,4 @@ const ArabClinicPage = () => {
     );
 };
 
-export default ArabClinicPage;
+export default Page;

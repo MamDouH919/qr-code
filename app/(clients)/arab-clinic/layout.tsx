@@ -8,7 +8,7 @@ const siteDescription = "Arab Clinic Center, established in 2018, is one of Egyp
 const siteKeywords = 'Arab Clinic, medical center Egypt, healthcare Qalyubia, Abu Zaabal clinic, Obour City hospital, Shebin El Qanater medical center, Meet Ghamr clinic, Egyptian healthcare, medical specialists Egypt, quality healthcare, عيادة العرب, مركز طبي مصر';
 const ogImage = `/arab-clinic/logo.webp`;
 
-export const metadata: Metadata = {
+export const ArabClinicMetaData: Metadata = {
   metadataBase: new URL(siteUrl),
   title: siteTitle,
   description: siteDescription,
@@ -64,10 +64,11 @@ export const metadata: Metadata = {
     'language': 'English',
     'revisit-after': '7 days',
   },
-};
+}
+export const metadata: Metadata = ArabClinicMetaData;
 
 // JSON-LD Structured Data
-const jsonLd = {
+export const ArabClinicJsonLd = {
   medicalClinic: {
     '@context': 'https://schema.org',
     '@type': 'MedicalClinic',
@@ -142,7 +143,7 @@ const jsonLd = {
   },
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode;
@@ -154,7 +155,7 @@ export default function RootLayout({
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd.medicalClinic),
+          __html: JSON.stringify(ArabClinicJsonLd.medicalClinic),
         }}
       />
 
@@ -163,7 +164,7 @@ export default function RootLayout({
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd.breadcrumb),
+          __html: JSON.stringify(ArabClinicJsonLd.breadcrumb),
         }}
       />
       {children}

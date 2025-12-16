@@ -24,6 +24,7 @@ import {
 } from "@/components/PageStyles";
 import BranchLocations from "@/components/_branches";
 import LanguageIcon from "@/components/LanguageIcon";
+import FancyboxCarousel from "@/components/FanceBox";
 
 
 const folderName = "mountain";
@@ -52,7 +53,7 @@ const Page = () => {
         <CacheProvider value={cache}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <LanguageIcon 
+                <LanguageIcon
                     handleChangeLanguage={setLanguage}
                     language={language === "ar" ? "en" : "ar"}
                 />
@@ -81,6 +82,56 @@ const Page = () => {
                     <Stack mt={4}>
                         <SocialMediaLinks links={data.socials} />
                     </Stack>
+                    <Stack mt={4} px={3}>
+                        <FancyboxCarousel
+                            images={
+                                [
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+                                        full: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+                                    },
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+                                        full: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+                                    },
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                    },
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                    },
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                    },
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                    },
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                    },
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                    },
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                    },
+                                    {
+                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                                    },
+                                ]
+                            }
+                        />
+                    </Stack>
+
+
                     {/* BRANCHES (NESTED THEME) */}
                     <BranchLocations
                         branches={data.branches}

@@ -1,12 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import Script from "next/script"
 import "./globals.css"
 import { Cairo } from "next/font/google"
+import "swiper/css";
+import "swiper/css/navigation";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { headers } from "next/headers"
+import ArabClinicLayout from "@/domains/ArabClinic"
+import { ArabClinicMetaData } from "./(clients)/arab-clinic/layout"
 
 const cairo = Cairo({
   weight: ["600", "700", "800"],
@@ -21,79 +25,89 @@ const siteDescription = 'Generate custom QR codes linked to personalized client 
 const siteKeywords = 'QR Code Generator, Custom QR for business, Digital business card QR, QR for shops and restaurants, personalized QR codes, client pages, QR code maker, free QR generator, business QR codes, restaurant QR menu';
 const ogImage = `/mountain/logo.webp`; // Update with your OG image path
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: siteTitle,
-    template: `%s | ${siteName}`,
-  },
-  description: siteDescription,
-  keywords: siteKeywords,
-  authors: [{ name: siteName }],
-  creator: siteName,
-  publisher: siteName,
-  generator: "mountain-egy.site",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+export async function generateMetadata(): Promise<Metadata> {
+  const host = (await headers()).get("host")
+  const domain = host?.split(":")[0];
+
+  // ❌ No metadata for other domains
+  if (domain === "qr.arabclinic.net") {
+    return ArabClinicMetaData;
+  }
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: {
+      default: siteTitle,
+      template: `%s | ${siteName}`,
+    },
+    description: siteDescription,
+    keywords: siteKeywords,
+    authors: [{ name: siteName }],
+    creator: siteName,
+    publisher: siteName,
+    generator: "mountain-egy.site",
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  alternates: {
-    canonical: siteUrl,
-    languages: {
-      'en': siteUrl,
-      'x-default': siteUrl,
-    },
-  },
-  openGraph: {
-    type: 'website',
-    url: siteUrl,
-    title: siteTitle,
-    description: siteDescription,
-    siteName: siteName,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteName,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       },
-    ],
-    locale: 'ar-EG',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteTitle,
-    description: siteDescription,
-    images: [ogImage],
-  },
-  icons: {
-    icon: [
-      { url: '/mountain/favicon.ico' },
-      { url: '/mountain/icon0.svg', sizes: '16x16', type: 'image/png' },
-      { url: '/mountain/icon1.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: '/apple-touch-icon.png',
-    other: [
-      {
-        rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
+    },
+    alternates: {
+      canonical: siteUrl,
+      languages: {
+        'en': siteUrl,
+        'x-default': siteUrl,
       },
-    ],
-  },
-  manifest: '/mountain/manifest.json',
-  other: {
-    'language': 'English',
-    'revisit-after': '7 days',
-    'rating': 'general',
-  },
-  category: 'technology',
+    },
+    openGraph: {
+      type: 'website',
+      url: siteUrl,
+      title: siteTitle,
+      description: siteDescription,
+      siteName: siteName,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: siteName,
+        },
+      ],
+      locale: 'ar-EG',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: siteTitle,
+      description: siteDescription,
+      images: [ogImage],
+    },
+    icons: {
+      icon: [
+        { url: '/mountain/favicon.ico' },
+        { url: '/mountain/icon0.svg', sizes: '16x16', type: 'image/png' },
+        { url: '/mountain/icon1.png', sizes: '32x32', type: 'image/png' },
+      ],
+      apple: '/apple-touch-icon.png',
+      other: [
+        {
+          rel: 'mask-icon',
+          url: '/safari-pinned-tab.svg',
+        },
+      ],
+    },
+    manifest: '/mountain/manifest.json',
+    other: {
+      'language': 'English',
+      'revisit-after': '7 days',
+      'rating': 'general',
+    },
+    category: 'technology',
+  }
 }
 
 // JSON-LD Structured Data
@@ -203,11 +217,18 @@ const jsonLd = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const host = (await headers()).get("host");
+  const domain = host?.split(":")[0];
+
+  if (domain === "qr.arabclinic.net") {
+    return <ArabClinicLayout />
+  }
+
   return (
     <html lang="en">
       <head>

@@ -1,0 +1,34 @@
+{
+    "id": "pizza-pepo",
+    "active": true,
+    "name": "Pizza Pepo",
+    "color": "#eb1d23",
+    "countryCode": "+2",
+    "multiLanguage": false,
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/Spaghttii"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "فرع بنها",
+                "en": ""
+            },
+            "numbers": [
+                {
+                    "number": "+201065222155",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "location": "https://www.google.com/maps/place/30%C2%B028'11.8%22N+31%C2%B011'04.1%22E/@30.469944,31.1819077,17z/data=!3m1!4b1!4m4!3m3!8m2!3d30.469944!4d31.1844826?hl=en&entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"        }
+    ],
+    "menu1":[
+
+    ]
+}
