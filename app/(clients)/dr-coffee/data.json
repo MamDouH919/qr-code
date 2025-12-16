@@ -1,0 +1,51 @@
+{
+    "id": "dr-coffee",
+    "active": true,
+    "name": "بن الدكتور",
+    "color": "#dcc556",
+    "countryCode": "+2",
+    "multiLanguage": false,
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://facebook.com/profile.php?id=61561819045371"
+        },
+        {
+            "code": "IG",
+            "link": "https://www.instagram.com/coffeedoctor2025/"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "فرع مدينة نصر",
+                "en": ""
+            },
+            "numbers": [
+                {
+                    "number": "+201508219873",
+                    "type": [
+                        "mobile"
+                    ]
+                },
+                {
+                    "number": "+201508319872",
+                    "type": [
+                        "mobile"
+                    ]
+                },
+                {
+                    "number": "+201003333445",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ]
+        }
+    ],
+    "menu1": [
+        "/menu/menu2.webp",
+        "/menu/menu1.webp"
+    ]
+}

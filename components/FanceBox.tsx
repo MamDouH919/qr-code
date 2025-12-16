@@ -8,11 +8,13 @@ import { Navigation } from "swiper/modules";
 
 export default function GalleryCarousel({
     images,
+    height = 400
 }:{
     images: {
         full: string;
         thumb: string;
     }[]
+    height?: number;
 }) {
     useEffect(() => {
         Fancybox.bind("[data-fancybox='gallery']", {} as any);
@@ -35,8 +37,8 @@ export default function GalleryCarousel({
                                 src={img.thumb}
                                 style={{
                                     width: "100%",
-                                    height: 260,
-                                    objectFit: "cover",
+                                    height: height,
+                                    objectFit: "contain",
                                     borderRadius: 8,
                                 }}
                             />

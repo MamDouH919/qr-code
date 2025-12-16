@@ -11,6 +11,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { headers } from "next/headers"
 import ArabClinicLayout from "@/domains/ArabClinic"
 import { ArabClinicMetaData } from "./(clients)/arab-clinic/layout"
+import DrCoffeeLayout from "@/domains/DrCoffee"
 
 const cairo = Cairo({
   weight: ["600", "700", "800"],
@@ -227,6 +228,10 @@ export default async function RootLayout({
 
   if (domain === "qr.arabclinic.net") {
     return <ArabClinicLayout />
+  }
+
+  if (domain === "dr-coffee.softwave.site" || domain === "localhost") {
+    return <DrCoffeeLayout />
   }
 
   return (
