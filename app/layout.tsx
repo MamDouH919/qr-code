@@ -12,6 +12,7 @@ import { headers } from "next/headers"
 import ArabClinicLayout from "@/domains/ArabClinic"
 import { ArabClinicMetaData } from "./(clients)/arab-clinic/layout"
 import DrCoffeeLayout from "@/domains/DrCoffee"
+import { DrCoffeeMetaData } from "./(clients)/dr-coffee/layout"
 
 const cairo = Cairo({
   weight: ["600", "700", "800"],
@@ -33,6 +34,9 @@ export async function generateMetadata(): Promise<Metadata> {
   // ❌ No metadata for other domains
   if (domain === "qr.arabclinic.net") {
     return ArabClinicMetaData;
+  }
+  if (domain === "dr-coffee.softwave.site") {
+    return DrCoffeeMetaData;
   }
 
   return {
