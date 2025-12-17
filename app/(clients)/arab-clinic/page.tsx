@@ -17,6 +17,11 @@ import BranchLocations from "@/components/_branches";
 import { BackgroundContainer, BackgroundImage, Overlay, ProfileImage, ProfileImageContainer, ProfileName, Spacer } from "@/components/PageStyles";
 import LanguageIcon from "@/components/LanguageIcon";
 import Footer from "@/components/Footer";
+import SaveContact from "@/components/AddToContact";
+
+import Description from "@/components/Description";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 /* ---------------- styled components ---------------- */
 
@@ -73,11 +78,19 @@ const ArabClinicPage = () => {
 
                     {/* NAME */}
                     <ProfileName>{data.name}</ProfileName>
+
                     <Stack spacing={4} mt={4}>
+
+                        <SaveContact
+                            links={data.socials.map((social) => social.link)}
+                            name={data.name}
+                            phoneNumbers={data.branches.map((branch) => branch.numbers.map((number) => number.number)).flat()}
+                            photoUrl={siteUrl + data.id + "/logo.webp"}
+                            role={data.role}
+                        />
+                        <Description description={data.description[language as "ar" | "en"]} />
                         {/* SOCIAL */}
-                        <Stack mt={4}>
-                            <SocialMediaLinks links={data.socials} />
-                        </Stack>
+                        <SocialMediaLinks links={data.socials} />
 
                         {/* BRANCHES (NESTED THEME) */}
                         <BranchLocations

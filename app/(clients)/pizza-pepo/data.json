@@ -2,9 +2,12 @@
     "id": "pizza-pepo",
     "active": true,
     "name": "Pizza Pepo",
+    "role": "Pizza Restaurant",
     "color": "#eb1d23",
+    "secondColor": "#badffb",
     "countryCode": "+2",
     "multiLanguage": false,
+    "description": "بيتزا بيبو - أفضل مطعم بيتزا في بنها، القليوبية. نقدم بيتزا طازجة ولذيذة مع أجود المكونات وأفضل الأسعار. توصيل سريع لجميع أنحاء بنها.",
     "socials": [
         {
             "code": "FB",
@@ -26,9 +29,23 @@
                     ]
                 }
             ],
-            "location": "https://www.google.com/maps/place/30%C2%B028'11.8%22N+31%C2%B011'04.1%22E/@30.469944,31.1819077,17z/data=!3m1!4b1!4m4!3m3!8m2!3d30.469944!4d31.1844826?hl=en&entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"        }
+            "location": "https://www.google.com/maps/place/30%C2%B028'11.8%22N+31%C2%B011'04.1%22E/@30.469944,31.1819077,17z/data=!3m1!4b1!4m4!3m3!8m2!3d30.469944!4d31.1844826?hl=en&entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
+        }
     ],
-    "menu1":[
-
+    "menu1": [
+        "/menu/pizza-pepo/menu1.webp",
+        "/menu/pizza-pepo/menu2.webp"
+    ],
+    "menu2": [
+        "/menu/bar-mousa/menu1.webp",
+        "/menu/bar-mousa/menu2.webp",
+        "/menu/bar-mousa/menu3.webp",
+        "/menu/bar-mousa/menu4.webp",
+        "/menu/bar-mousa/menu5.webp",
+        "/menu/bar-mousa/menu6.webp",
+        "/menu/bar-mousa/menu7.webp",
+        "/menu/bar-mousa/menu8.webp",
+        "/menu/bar-mousa/menu9.webp",
+        "/menu/bar-mousa/menu10.webp"
     ]
 }

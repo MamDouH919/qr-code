@@ -26,11 +26,12 @@ import BranchLocations from "@/components/_branches";
 import LanguageIcon from "@/components/LanguageIcon";
 import FancyboxCarousel from "@/components/FanceBox";
 import { ourClients } from "@/components/Customers";
+import SaveContact from "@/components/AddToContact";
 
+import Description from "@/components/Description";
 
 const folderName = "mountain";
-
-
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 const Page = () => {
     const [ready, setReady] = useState(false);
@@ -83,7 +84,17 @@ const Page = () => {
 
                     <Stack spacing={4} my={4}>
                         {/* SOCIAL */}
+                        <SaveContact
+                            links={data.socials.map((social) => social.link)}
+                            name={data.name}
+                            phoneNumbers={data.branches.map((branch) => branch.numbers.map((number) => number.number)).flat()}
+                            photoUrl={siteUrl + data.id + "/logo.webp"}
+                            role={data.role}
+                        />
+                        <Description description={data.description[language as "ar" | "en"]} />
                         <SocialMediaLinks links={data.socials} />
+
+
                         <FancyboxCarousel
                             images={
                                 ourClients.map((client) => ({

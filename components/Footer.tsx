@@ -1,4 +1,4 @@
-import { Box, Typography, Container, useTheme, Paper } from '@mui/material';
+import { Box, Typography, Container, useTheme, Paper, Stack } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -32,14 +32,10 @@ const Footer = () => {
                 }}
             >
                 <Container maxWidth="lg">
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            flexDirection: { xs: 'column', sm: 'row' },
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: 2,
-                        }}
+                    <Stack
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        spacing={2}
                     >
                         {/* Logo */}
                         <Box
@@ -70,7 +66,7 @@ const Footer = () => {
                         <Typography variant="body2" color="text.secondary" align="center">
                             {t.copyright.replace('{year}', String(currentYear))}
                         </Typography>
-                    </Box>
+                    </Stack>
                 </Container>
             </Box>
         </Paper>

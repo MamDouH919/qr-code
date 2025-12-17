@@ -14,7 +14,7 @@ export default function GalleryCarousel({
     images,
     height = 400,
     variant = "default",
-    title = "Gallery"
+    title
 }: {
     images: {
         full: string;
@@ -37,14 +37,14 @@ export default function GalleryCarousel({
     return (
         <Box>
             <Container>
-                <Stack direction="row" justifyContent="center" alignItems="center" mb={2}>
+                {title && <Stack direction="row" justifyContent="center" alignItems="center" mb={2}>
                     <Typography variant="h2" alignItems={"center"} fontSize={35}>
                         {title}
                     </Typography>
-                </Stack>
+                </Stack>}
                 <div style={{ width: "100%", overflow: "visible", position: "relative" }}>
                     <Swiper
-                        dir={   "ltr"}
+                        dir={"ltr"}
                         modules={[Pagination, Autoplay]}
                         pagination={{
                             clickable: true,

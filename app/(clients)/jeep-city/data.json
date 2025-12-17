@@ -1,0 +1,28 @@
+{
+    "id": "jeep-city",
+    "active": true,
+    "name": "Arab Clinic",
+    "description": "جيب سيتي، مركز متخصص في صيانة وإصلاح سيارات الجيب بجميع أنواعها. نقدم خدمات صيانة احترافية بأعلى جودة وأحدث المعدات في القاهرة الجديدة - مدينة الرحاب. فريق عمل متخصص وقطع غيار أصلية لضمان أفضل أداء لسيارتك.",
+    "color": "#e0b506",
+    "countryCode": "+2",
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/jeepcityegy"
+        },
+        {
+            "code": "IG",
+            "link": "https://www.instagram.com/jeepcity_eltantawyusa?igsh=YWR3dzc0NWI5czgx"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "القاهرة الجديدة - مدينة الرحاب - السوق الشرقى",
+                "en": "New Cairo - Rehab City - South Side"
+            },
+            "numbers": [],
+            "location": "https://maps.app.goo.gl/xy6s9dMikWH35srh7"
+        }
+    ]
+}

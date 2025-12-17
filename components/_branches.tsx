@@ -189,7 +189,7 @@ export default function BranchLocations({
 
                                         {/* Phone Numbers */}
                                         <Box sx={{ mb: 2 }}>
-                                            <Typography
+                                            {!!branch.numbers.length && <Typography
                                                 variant="subtitle2"
                                                 sx={{
 
@@ -198,7 +198,7 @@ export default function BranchLocations({
                                                 }}
                                             >
                                                 {translationsData.phoneNumbers}
-                                            </Typography>
+                                            </Typography>}
                                             <Stack spacing={1}>
                                                 <List>
                                                     {branch.numbers.map((phone, idx) => (
@@ -223,7 +223,7 @@ export default function BranchLocations({
                                                                     minWidth: 25,
                                                                 }}
                                                             >
-                                                                <Remove />
+                                                                <PhoneOutlined />
                                                             </ListItemIcon>
                                                             <ListItemText
                                                                 primary={phone.number.replace(splitCode, '')}
@@ -236,36 +236,38 @@ export default function BranchLocations({
 
                                         {/* Action Buttons */}
                                         <Grid container spacing={1.5}>
-                                            <Grid size={{ xs: 6 }}>
-                                                <Button
-                                                    fullWidth
-                                                    variant="contained"
-                                                    color='info'
-                                                    onClick={() => {
-                                                        handleOpen();
-                                                        setTypeOfContact('mobile');
-                                                        setNumbers(branch.numbers.filter((number) => number.type.includes('mobile')).map((number) => number.number));
-                                                    }}
-                                                    startIcon={<PhoneOutlined />}
-                                                >
-                                                    {translationsData.call}
-                                                </Button>
-                                            </Grid>
-                                            <Grid size={{ xs: 6 }}>
-                                                <Button
-                                                    fullWidth
-                                                    variant="contained"
-                                                    color='success'
-                                                    onClick={() => {
-                                                        handleOpen();
-                                                        setTypeOfContact('whatsApp');
-                                                        setNumbers(branch.numbers.filter((number) => number.type.includes('whatsApp')).map((number) => number.number));
-                                                    }}
-                                                    startIcon={<WhatsApp />}
-                                                >
-                                                    {translationsData.whatsapp}
-                                                </Button>
-                                            </Grid>
+                                            {branch.numbers.some((number) => number.type.includes('mobile')) &&
+                                                <Grid size={{ xs: branch.numbers.some((number) => number.type.includes('whatsApp')) ? 6 : 12 }}>
+                                                    <Button
+                                                        fullWidth
+                                                        variant="contained"
+                                                        color='info'
+                                                        onClick={() => {
+                                                            handleOpen();
+                                                            setTypeOfContact('mobile');
+                                                            setNumbers(branch.numbers.filter((number) => number.type.includes('mobile')).map((number) => number.number));
+                                                        }}
+                                                        startIcon={<PhoneOutlined />}
+                                                    >
+                                                        {translationsData.call}
+                                                    </Button>
+                                                </Grid>}
+                                            {branch.numbers.some((number) => number.type.includes('whatsApp')) &&
+                                                <Grid size={{ xs: branch.numbers.some((number) => number.type.includes('mobile')) ? 6 : 12 }}>
+                                                    <Button
+                                                        fullWidth
+                                                        variant="contained"
+                                                        color='success'
+                                                        onClick={() => {
+                                                            handleOpen();
+                                                            setTypeOfContact('whatsApp');
+                                                            setNumbers(branch.numbers.filter((number) => number.type.includes('whatsApp')).map((number) => number.number));
+                                                        }}
+                                                        startIcon={<WhatsApp />}
+                                                    >
+                                                        {translationsData.whatsapp}
+                                                    </Button>
+                                                </Grid>}
                                             {branch.location &&
                                                 <Grid size={{ xs: 12 }}>
                                                     <Button

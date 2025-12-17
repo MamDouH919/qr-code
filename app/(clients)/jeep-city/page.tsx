@@ -6,6 +6,7 @@ import {
     CssBaseline,
     Stack,
     ThemeProvider,
+    Typography,
 } from "@mui/material";
 
 import createEmotionCache from "@/lib/create-emotion-cache";
@@ -17,16 +18,16 @@ import BranchLocations from "@/components/_branches";
 import { BackgroundContainer, BackgroundImage, Overlay, ProfileImage, ProfileImageContainer, ProfileName, Spacer } from "@/components/PageStyles";
 import LanguageIcon from "@/components/LanguageIcon";
 import Footer from "@/components/Footer";
-import PepoGallery from "@/components/PepoGallery";
-import SaveContact from "@/components/AddToContact";
-
 import Description from "@/components/Description";
 
-/* ---------------- page component ---------------- */
-const folderName = "pizza-pepo";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+/* ---------------- styled components ---------------- */
 
-const Page = () => {
+
+/* ---------------- page component ---------------- */
+
+const folderName = "jeep-city";
+
+const ArabClinicPage = () => {
     const [ready, setReady] = useState(false);
     const [language, setLanguage] = useState("ar");
 
@@ -41,7 +42,7 @@ const Page = () => {
 
     const theme = useMemo(() => getTheme({
         primaryColor: data.color,
-        secondaryColor: data.secondColor,
+        secondaryColor: "#000",
         dir: dir
     }), [language]);
 
@@ -75,33 +76,10 @@ const Page = () => {
                     {/* NAME */}
                     <ProfileName>{data.name}</ProfileName>
                     <Stack spacing={4} mt={4}>
-                        <SaveContact
-                            links={data.socials.map((social) => social.link)}
-                            name={data.name}
-                            phoneNumbers={data.branches.map((branch) => branch.numbers.map((number) => number.number)).flat()}
-                            photoUrl={siteUrl + data.id + "/logo.webp"}
-                            role={data.role}
-                        />
-
                         <Description description={data.description} />
-
                         {/* SOCIAL */}
                         <SocialMediaLinks links={data.socials} />
-                        <PepoGallery
-                            tabs={
-                                [
-                                    {
-                                        title: "بيتزا بيبو",
-                                        images: data.menu1
-                                    },
-                                    {
-                                        title: "بار موسى",
-                                        images: data.menu2
-                                    }
-                                ]
-                            }
-                            id={data.id}
-                        />
+
                         {/* BRANCHES (NESTED THEME) */}
                         <BranchLocations
                             branches={data.branches}
@@ -115,4 +93,4 @@ const Page = () => {
     );
 };
 
-export default Page;
+export default ArabClinicPage;

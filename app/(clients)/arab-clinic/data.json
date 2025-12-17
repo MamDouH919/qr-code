@@ -2,11 +2,14 @@
     "id": "arab-clinic",
     "active": true,
     "name": "Arab Clinic",
-    "title": "Arab Clinic",
-    "description": "Arab Clinic",
-    "keywords": "arabClinic",
+    "role": "Medical Center",
+    "description": {
+        "ar": "مركز طبي مصر، مصر المركز الطبي المتخصص في مدينة قاليوبية، ومدينة عبور سيتي، ومدينة شبين القانطر، ومدينة ميت غمر",
+        "en": "Arab Clinic Center, established in 2018, is one of Egypt's premier healthcare providers with branches in Qalyubia, Obour City, Shebin El Qanater, and Meet Ghamr"
+    },
     "color": "#6999d5",
     "countryCode": "+2",
+    "defaultPhone": "+201550141552",
     "socials": [
         {
             "code": "FB",

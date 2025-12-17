@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, styled } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Styled Components
 const ScrollContainer = styled(Box)(({ theme }) => ({
@@ -70,6 +71,16 @@ export const ourClients = [
         name: "Arab Clinic",
         src: "/arab-clinic/logo.webp",
     },
+    {
+        id: "pizza-pepo",
+        name: "Pizza Pepo",
+        src: "/pizza-pepo/logo.webp",
+    },
+    {
+        id: "jeep-city",
+        name: "Jeep City",
+        src: "/jeep-city/logo.webp",
+    }
 ];
 
 const CustomerImagesSection = () => {
@@ -77,8 +88,6 @@ const CustomerImagesSection = () => {
     const duplicatedImages = [
         ...ourClients,
         ...ourClients,
-        ...ourClients,
-        ...ourClients
     ];
 
     return (
@@ -98,13 +107,15 @@ const CustomerImagesSection = () => {
                 <ScrollTrack>
                     {duplicatedImages.map((image, index) => (
                         <ImageCard key={`${image.id}-${index}`}>
-                            <Image
-                                src={image.src}
-                                alt={image.name}
-                                fill
-                                style={{ objectFit: 'cover' }}
-                                sizes="300px"
-                            />
+                            <Link href={`/${image.id}`}>
+                                <Image
+                                    src={image.src}
+                                    alt={image.name}
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                    sizes="300px"
+                                />
+                            </Link>
                         </ImageCard>
                     ))}
                 </ScrollTrack>
