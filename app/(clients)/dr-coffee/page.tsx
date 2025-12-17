@@ -17,6 +17,7 @@ import BranchLocations from "@/components/_branches";
 import { BackgroundContainer, BackgroundImage, Overlay, ProfileImage, ProfileImageContainer, ProfileName, Spacer } from "@/components/PageStyles";
 import LanguageIcon from "@/components/LanguageIcon";
 import GalleryCarousel from "@/components/FanceBox";
+import Footer from "@/components/Footer";
 
 /* ---------------- styled components ---------------- */
 
@@ -40,7 +41,7 @@ const DrCoffeePage = () => {
 
     const theme = useMemo(() => getTheme({
         primaryColor: data.color,
-        secondaryColor: "#000",
+        secondaryColor: data.color,
         dir: dir
     }), [language]);
 
@@ -74,25 +75,27 @@ const DrCoffeePage = () => {
                     {/* NAME */}
                     <ProfileName>{data.name}</ProfileName>
 
-                    {/* SOCIAL */}
-                    <Stack mt={4}>
+                    <Stack spacing={4} mt={4}>
+                        {/* SOCIAL */}
                         <SocialMediaLinks links={data.socials} />
-                    </Stack>
-                    <Stack mt={4} px={3}>
+
                         <GalleryCarousel
                             images={data.menu1.map((image) => ({
                                 thumb: data.id + image,
                                 full: data.id + image,
                             }))}
                             height={500}
+                            title="المنيو"
                         />
-                    </Stack>
 
-                    {/* BRANCHES (NESTED THEME) */}
-                    <BranchLocations
-                        branches={data.branches}
-                        splitCode={data.countryCode}
-                    />
+
+                        {/* BRANCHES (NESTED THEME) */}
+                        <BranchLocations
+                            branches={data.branches}
+                            splitCode={data.countryCode}
+                        />
+                        <Footer />
+                    </Stack>
                 </Stack>
             </ThemeProvider>
         </CacheProvider>

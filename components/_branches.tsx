@@ -96,7 +96,6 @@ export default function BranchLocations({
         setOpen(false);
     };
 
-    const [searchQuery, setSearchQuery] = useState('');
     const [copiedPhone, setCopiedPhone] = useState<string | null>(null);
 
     const handleCopyPhone = (phone: string) => {
@@ -105,24 +104,12 @@ export default function BranchLocations({
         setTimeout(() => setCopiedPhone(null), 2000);
     };
 
-    const handleCall = (phone: string) => {
-        window.open(`tel:${phone}`, '_blank');
-    };
-
-    const handleWhatsApp = (phone: string) => {
-        window.open(`https://wa.me/${phone.replace(/\+/g, '')}`, '_blank');
-    };
-
     const handleLocation = (location: string) => {
         window.open(location, '_blank');
     };
 
     return (
-        <Box
-            sx={{
-                py: 4,
-            }}
-        >
+        <Box>
             <Dialog
                 open={open}
                 onClose={handleClose}
@@ -159,7 +146,6 @@ export default function BranchLocations({
                 </DialogActions>
             </Dialog>
             <Container>
-                {/* Branch Cards */}
                 <Grid container spacing={3}>
                     {branches.map((branch, index) => (
                         <Grid size={{ xs: 12 }} key={index}>
@@ -304,43 +290,3 @@ export default function BranchLocations({
         </Box>
     );
 }
-
-
-// <Box
-//     key={idx}
-//     sx={{
-//         display: 'flex',
-//         alignItems: 'center',
-//         gap: 1,
-//         p: 1.5,
-//         backgroundColor: (theme) => theme.palette.primary.main,
-//         borderRadius: 2,
-//         justifyContent: 'space-between'
-//     }}
-// >
-//     <Stack direction="row" spacing={1}>
-//         <Typography
-//             variant="body2"
-//             sx={{
-//                 fontWeight: 600,
-//                 color: '#2d3748',
-//                 direction: 'ltr',
-//                 textAlign: 'right'
-//             }}
-//         >
-//             {phone.number.replace(splitCode, '')}
-//         </Typography>
-//     </Stack>
-//     <IconButton
-//         size="small"
-//         onClick={() => handleCopyPhone(phone)}
-//         sx={{
-//             color: copiedPhone === phone ? '#48bb78' : '#667eea',
-//             '&:hover': {
-//                 backgroundColor: 'rgba(102, 126, 234, 0.1)',
-//             },
-//         }}
-//     >
-//         {copiedPhone === phone ? <Check size={16} /> : <Copy size={16} />}
-//     </IconButton>
-// </Box>

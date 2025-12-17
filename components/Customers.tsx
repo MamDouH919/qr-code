@@ -59,18 +59,27 @@ const ImageCard = styled(Box)(({ theme }) => ({
 }));
 
 // Sample customer images data
-const customerImages = [
-    { id: 1, src: "/arab-clinic/logo.webp", alt: 'Arab Clinic' },
-    { id: 2, src: "/arab-clinic/logo.webp", alt: 'Retail customer' },
-    { id: 3, src: "/arab-clinic/logo.webp", alt: 'Healthcare customer' },
-    { id: 4, src: "/arab-clinic/logo.webp", alt: 'Real estate customer' },
-    { id: 5, src: "/arab-clinic/logo.webp", alt: 'Restaurant customer' },
-    { id: 6, src: "/arab-clinic/logo.webp", alt: 'Retail customer' },
+export const ourClients = [
+    {
+        id: "dr-coffee",
+        name: "Dr Coffee",
+        src: "/dr-coffee/logo.webp",
+    },
+    {
+        id: "arab-clinic",
+        name: "Arab Clinic",
+        src: "/arab-clinic/logo.webp",
+    },
 ];
 
 const CustomerImagesSection = () => {
     // Duplicate the array to create seamless infinite scroll
-    const duplicatedImages = [...customerImages, ...customerImages];
+    const duplicatedImages = [
+        ...ourClients,
+        ...ourClients,
+        ...ourClients,
+        ...ourClients
+    ];
 
     return (
         <Box sx={{ py: 10, }}>
@@ -91,7 +100,7 @@ const CustomerImagesSection = () => {
                         <ImageCard key={`${image.id}-${index}`}>
                             <Image
                                 src={image.src}
-                                alt={image.alt}
+                                alt={image.name}
                                 fill
                                 style={{ objectFit: 'cover' }}
                                 sizes="300px"

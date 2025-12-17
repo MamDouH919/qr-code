@@ -6,6 +6,7 @@
     "description": "Mountain",
     "keywords": "mountain",
     "color": "#000",
+    "secondColor": "#fff",
     "countryCode": "+2",
     "socials": [
         {

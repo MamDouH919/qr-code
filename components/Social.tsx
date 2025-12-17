@@ -3,7 +3,9 @@ import {
     Button,
     Stack,
     Paper,
-    useTheme
+    useTheme,
+    Container,
+    Box
 } from '@mui/material';
 import {
     Facebook,
@@ -130,55 +132,59 @@ export default function SocialMediaLinks({
         }));
 
     return (
-        <Stack spacing={2.2} px={3}>
-            {availableLinks.map((social, index) => (
-                <Button
-                    key={index}
-                    component="a"
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    endIcon={social.icon}
-                    fullWidth
-                    sx={{
-                        backgroundImage: social.gradient,
-                        backgroundColor: 'transparent',
-                        color: '#fff',
+        <Box>
+            <Container>
+                <Stack spacing={2}>
+                    {availableLinks.map((social, index) => (
+                        <Button
+                            key={index}
+                            component="a"
+                            href={social.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            endIcon={social.icon}
+                            fullWidth
+                            sx={{
+                                backgroundImage: social.gradient,
+                                backgroundColor: 'transparent',
+                                color: '#fff',
 
-                        height: 64,
-                        px: 3,
-                        fontSize: '1.05rem',
-                        fontWeight: 600,
-                        textTransform: 'none',
-                        borderRadius: 999,
+                                height: 64,
+                                px: 3,
+                                fontSize: '1.05rem',
+                                fontWeight: 600,
+                                textTransform: 'none',
+                                borderRadius: 999,
 
-                        justifyContent: 'space-between',
-                        boxShadow: '0 8px 24px rgba(0,0,0,0.35)',
+                                justifyContent: 'space-between',
+                                boxShadow: '0 8px 24px rgba(0,0,0,0.35)',
 
-                        animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
+                                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
 
-                        '&:hover': {
-                            backgroundImage: social.gradient,
-                            transform: 'translateY(-2px)',
-                            boxShadow: '0 12px 32px rgba(0,0,0,0.45)',
-                        },
+                                '&:hover': {
+                                    backgroundImage: social.gradient,
+                                    transform: 'translateY(-2px)',
+                                    boxShadow: '0 12px 32px rgba(0,0,0,0.45)',
+                                },
 
-                        '&:active': {
-                            transform: 'translateY(0)',
-                        },
-                        '& svg': {
-                            fontSize: "25px !important",
-                        },
+                                '&:active': {
+                                    transform: 'translateY(0)',
+                                },
+                                '& svg': {
+                                    fontSize: "25px !important",
+                                },
 
-                        '@keyframes fadeInUp': {
-                            from: { opacity: 0, transform: 'translateY(24px)' },
-                            to: { opacity: 1, transform: 'translateY(0)' }
-                        }
-                    }}
-                >
-                    {isArabic ? social.nameAr : social.name}
-                </Button>
-            ))}
-        </Stack>
+                                '@keyframes fadeInUp': {
+                                    from: { opacity: 0, transform: 'translateY(24px)' },
+                                    to: { opacity: 1, transform: 'translateY(0)' }
+                                }
+                            }}
+                        >
+                            {isArabic ? social.nameAr : social.name}
+                        </Button>
+                    ))}
+                </Stack>
+            </Container>
+        </Box>
     );
 }

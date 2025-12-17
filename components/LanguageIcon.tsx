@@ -39,11 +39,15 @@ const LanguageIcon = ({
     >
       <Fab
         aria-label="Change language"
-        color="primary"
+        color="secondary"
         onClick={() => handleChangeLanguage(language)}
         className={classes.fab}
       >
-        <Typography fontSize={20} color="text.secondary">
+        <Typography fontSize={20} 
+          sx={{
+            color:(th) => th.palette.secondary.contrastText
+          }}
+        >
           {language}
         </Typography>
       </Fab>

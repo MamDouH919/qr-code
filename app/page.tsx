@@ -16,6 +16,7 @@ import {
     useTheme,
     CssBaseline,
     Avatar,
+    Stack,
 } from '@mui/material';
 import {
     QrCode2,
@@ -37,6 +38,7 @@ import createEmotionCache from '@/lib/create-emotion-cache';
 import getTheme from '@/lib/theme';
 import Image from 'next/image';
 import CustomerImagesSection from '@/components/Customers';
+import { useCountry } from '@/lib/country-provider';
 
 
 
@@ -125,6 +127,8 @@ export default function QRGeneratorLanding() {
         secondaryColor: "#4f4e4e",
         dir: "ltr"
     }), []);
+
+    const { country } = useCountry();
 
     return (
         <CacheProvider value={cache}>
@@ -340,7 +344,7 @@ export default function QRGeneratorLanding() {
                             <Grid size={{ xs: 12, md: 6 }}>
                                 <Box sx={{ position: 'relative', aspectRatio: '1/1', borderRadius: 4, overflow: 'hidden' }}>
                                     <Image
-                                        src="/smartphone-displaying-beautiful-qr-code-landing-pa.jpg"
+                                        src="/smartphone-displaying-beautiful-qr-code-landing-pa.png"
                                         alt="QR Code features on mobile device"
                                         fill
                                         style={{ objectFit: 'cover' }}
@@ -362,30 +366,60 @@ export default function QRGeneratorLanding() {
 
                         <Grid container spacing={4} sx={{ maxWidth: 1200, mx: 'auto' }}>
                             {[
-                                { title: 'Basic', price: '$19', desc: 'Perfect for individuals', features: ['1 Custom QR Code', 'Mobile-Optimized Page', 'Basic Analytics', 'Email Support'], featured: false },
-                                { title: 'Professional', price: '$39', desc: 'Best for businesses', features: ['5 Custom QR Codes', 'Advanced Analytics', 'Custom Branding', 'Priority Support', 'Social Media Integration'], featured: true },
-                                { title: 'Enterprise', price: '$99', desc: 'For large organizations', features: ['Unlimited QR Codes', 'White-Label Solution', 'API Access', 'Dedicated Support', 'Custom Integrations'], featured: false },
+                                {
+                                    title: 'Basic',
+                                    price: country === "EG" ? '800 EGP' : '$20',
+                                    yearlyRenewal: country === "EG" ? '400 EGP' : '$10',
+                                    desc: 'Perfect for Personal',
+                                    features: ['Social Media', 'Phone Numbers & Locations', 'Custom Color', 'Custom Title & Description', 'Custom Logo & favicon'],
+                                    featured: false
+                                },
+                                {
+                                    title: 'Professional',
+                                    price: country === "EG" ? '1000 EGP' : '$25',
+                                    yearlyRenewal: country === "EG" ? '500 EGP' : '$12',
+                                    desc: 'Best for businesses',
+                                    features: ['Social Media', 'Phone Numbers & Locations', 'Custom Color', 'Custom Title & Description', 'Custom Logo & favicon', '10 Custom Images', 'Custom Section If Needed'],
+                                    featured: true
+                                },
+                                {
+                                    title: 'Enterprise',
+                                    price: country === "EG" ? '1500 EGP' : '$35',
+                                    yearlyRenewal: country === "EG" ? '700 EGP' : '$15',
+                                    desc: 'For large all organizations',
+                                    features: ['Social Media', 'Phone Numbers & Locations', 'Custom Color', 'Custom Title & Description', 'Custom Logo & favicon', '20 Custom Images', 'Custom Section If Needed', 'Custom Style If Needed'],
+                                    featured: false
+                                },
                             ].map((plan) => (
                                 <Grid size={{ xs: 12, md: 4 }} key={plan.title}>
                                     <PricingCard featured={plan.featured}>
                                         {plan.featured && <PopularBadge label="Most Popular" />}
-                                        <CardContent sx={{ textAlign: 'center', p: 4 }}>
-                                            <Typography variant="h5" gutterBottom fontWeight="bold">{plan.title}</Typography>
-                                            <Typography variant="h3" fontWeight="bold" sx={{ my: 2 }}>{plan.price}</Typography>
-                                            <Typography color="text.secondary" gutterBottom>{plan.desc}</Typography>
+                                        <CardContent sx={{ textAlign: 'center', p: 4, height: "100%" }}>
+                                            <Stack height={"100%"}>
+                                                <Stack spacing={2}>
+                                                    <Typography variant="h5" gutterBottom fontWeight="bold">{plan.title}</Typography>
+                                                    <Typography variant="h3" fontWeight="bold" sx={{ my: 2 }}>{plan.price}</Typography>
+                                                    <Typography color="text.secondary" gutterBottom>{plan.desc}</Typography>
+                                                    <Typography  gutterBottom fontWeight={"bold"}>
+                                                         Yearly: {plan.yearlyRenewal}
+                                                    </Typography>
+                                                </Stack>
 
-                                            <Box sx={{ my: 3 }}>
-                                                {plan.features.map((feature) => (
-                                                    <Box key={feature} sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                                                        <CheckCircle sx={{ fontSize: 20 }} color='primary' />
-                                                        <Typography variant="body2">{feature}</Typography>
+                                                <Stack justifyContent={"space-between"} flex={1}>
+                                                    <Box sx={{ my: 3 }}>
+                                                        {plan.features.map((feature) => (
+                                                            <Box key={feature} sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                                                                <CheckCircle sx={{ fontSize: 20 }} color='primary' />
+                                                                <Typography variant="body2">{feature}</Typography>
+                                                            </Box>
+                                                        ))}
                                                     </Box>
-                                                ))}
-                                            </Box>
 
-                                            <Button variant="contained" fullWidth size="large">
-                                                {plan.title === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
-                                            </Button>
+                                                    <Button variant="contained" fullWidth size="large">
+                                                        {plan.title === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+                                                    </Button>
+                                                </Stack>
+                                            </Stack>
                                         </CardContent>
                                     </PricingCard>
                                 </Grid>

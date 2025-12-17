@@ -13,6 +13,7 @@ import ArabClinicLayout from "@/domains/ArabClinic"
 import { ArabClinicMetaData } from "./(clients)/arab-clinic/layout"
 import DrCoffeeLayout from "@/domains/DrCoffee"
 import { DrCoffeeMetaData } from "./(clients)/dr-coffee/layout"
+import ClientProvider from "@/lib/country-provider"
 
 const cairo = Cairo({
   weight: ["600", "700", "800"],
@@ -230,11 +231,17 @@ export default async function RootLayout({
   const host = (await headers()).get("host");
   const domain = host?.split(":")[0];
 
+  const headersList = headers();
+  const country = (await headersList).get("x-user-country") || "EG";
+
+  console.log(country);
+  
+
   if (domain === "qr.arabclinic.net") {
     return <ArabClinicLayout />
   }
 
-  if (domain === "dr-coffee.softwave.site" || domain === "localhost") {
+  if (domain === "dr-coffee.softwave.site") {
     return <DrCoffeeLayout />
   }
 
@@ -296,7 +303,9 @@ export default async function RootLayout({
       </head>
       <body className={cairo.className}>
         <Suspense fallback={null}>
-          {children}
+          <ClientProvider country={country}>
+            {children}
+          </ClientProvider>
         </Suspense>
         <Analytics />
       </body>

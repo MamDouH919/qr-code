@@ -16,6 +16,7 @@ import SocialMediaLinks from "@/components/Social";
 import BranchLocations from "@/components/_branches";
 import { BackgroundContainer, BackgroundImage, Overlay, ProfileImage, ProfileImageContainer, ProfileName, Spacer } from "@/components/PageStyles";
 import LanguageIcon from "@/components/LanguageIcon";
+import Footer from "@/components/Footer";
 
 /* ---------------- styled components ---------------- */
 
@@ -72,17 +73,19 @@ const ArabClinicPage = () => {
 
                     {/* NAME */}
                     <ProfileName>{data.name}</ProfileName>
+                    <Stack spacing={4} mt={4}>
+                        {/* SOCIAL */}
+                        <Stack mt={4}>
+                            <SocialMediaLinks links={data.socials} />
+                        </Stack>
 
-                    {/* SOCIAL */}
-                    <Stack mt={4}>
-                        <SocialMediaLinks links={data.socials} />
+                        {/* BRANCHES (NESTED THEME) */}
+                        <BranchLocations
+                            branches={data.branches}
+                            splitCode={data.countryCode}
+                        />
+                        <Footer />
                     </Stack>
-
-                    {/* BRANCHES (NESTED THEME) */}
-                    <BranchLocations
-                        branches={data.branches}
-                        splitCode={data.countryCode}
-                    />
                 </Stack>
             </ThemeProvider>
         </CacheProvider>

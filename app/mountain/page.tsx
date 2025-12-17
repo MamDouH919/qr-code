@@ -25,9 +25,12 @@ import {
 import BranchLocations from "@/components/_branches";
 import LanguageIcon from "@/components/LanguageIcon";
 import FancyboxCarousel from "@/components/FanceBox";
+import { ourClients } from "@/components/Customers";
 
 
 const folderName = "mountain";
+
+
 
 const Page = () => {
     const [ready, setReady] = useState(false);
@@ -43,7 +46,7 @@ const Page = () => {
 
     const theme = useMemo(() => getTheme({
         primaryColor: data.color,
-        secondaryColor: "#000",
+        secondaryColor: data.secondColor,
         dir: language === "ar" ? "rtl" : "ltr"
     }), [language]);
 
@@ -78,65 +81,27 @@ const Page = () => {
                     {/* NAME */}
                     <ProfileName>{data.name}</ProfileName>
 
-                    {/* SOCIAL */}
-                    <Stack mt={4}>
+                    <Stack spacing={4} my={4}>
+                        {/* SOCIAL */}
                         <SocialMediaLinks links={data.socials} />
-                    </Stack>
-                    <Stack mt={4} px={3}>
                         <FancyboxCarousel
                             images={
-                                [
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-                                        full: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-                                    },
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-                                        full: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-                                    },
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                    },
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                    },
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                    },
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                    },
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                    },
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                    },
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                    },
-                                    {
-                                        thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                        full: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-                                    },
-                                ]
+                                ourClients.map((client) => ({
+                                    thumb: `${client.src}`,
+                                    full: `${client.src}`,
+                                }))
                             }
+                            height={300}
+                            variant="circle"
+                            title={theme.direction === "rtl" ? "عملاؤنا" : "Our Clients"}
+                        />
+
+                        {/* BRANCHES (NESTED THEME) */}
+                        <BranchLocations
+                            branches={data.branches}
+                            splitCode={data.countryCode}
                         />
                     </Stack>
-
-
-                    {/* BRANCHES (NESTED THEME) */}
-                    <BranchLocations
-                        branches={data.branches}
-                        splitCode={data.countryCode}
-                    />
                 </Stack>
             </ThemeProvider>
         </CacheProvider>
