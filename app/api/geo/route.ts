@@ -6,8 +6,8 @@ function getClientIp(req: NextRequest) {
   const realIp = req.headers.get("x-real-ip");
   const socketIp = (req as any).socket?.remoteAddress; // fallback Node.js
 
-  if (forwarded) return forwarded.split(",")[0].trim();
-  if (realIp) return realIp;
+//   if (forwarded) return forwarded.split(",")[0].trim();
+//   if (realIp) return realIp;
   if (socketIp) return socketIp;
   return "8.8.8.8"; // fallback عالمي
 }
