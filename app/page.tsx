@@ -1,5 +1,5 @@
 "use client"
-import React, { useLayoutEffect, useMemo } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import {
     Box,
     Container,
@@ -132,9 +132,29 @@ export default function QRGeneratorLanding() {
         document.documentElement.setAttribute("dir", "ltr");
     }, []);
 
-    const { country } = useCountry();
-    console.log(country);
-    
+
+    const [country, setCountry] = useState("EG");
+    async function getVisitorInfo() {
+        // call ipapi for IP + country
+        const ipRes = await fetch("https://ipapi.co/json/");
+        const ipData = await ipRes.json();
+
+        const info = {
+            ip: ipData.ip,
+            country: ipData.country_name, // e.g. "Egypt"
+            countryCode: ipData.country,  // e.g. "EG"
+            userAgent: navigator.userAgent,
+            language: navigator.language,
+            platform: navigator.platform,
+            screen: `${window.screen.width}x${window.screen.height}`,
+        };
+
+        setCountry(info.countryCode);
+    }
+
+    useEffect(() => {
+        getVisitorInfo();
+    }, [])
 
     return (
         <CacheProvider value={cache}>
