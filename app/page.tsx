@@ -1,5 +1,5 @@
 "use client"
-import React, { useMemo } from 'react';
+import React, { useLayoutEffect, useMemo } from 'react';
 import {
     Box,
     Container,
@@ -128,7 +128,13 @@ export default function QRGeneratorLanding() {
         dir: "ltr"
     }), []);
 
+    useLayoutEffect(() => {
+        document.documentElement.setAttribute("dir", "ltr");
+    }, []);
+
     const { country } = useCountry();
+    console.log(country);
+    
 
     return (
         <CacheProvider value={cache}>
@@ -371,7 +377,14 @@ export default function QRGeneratorLanding() {
                                     price: country === "EG" ? '800 EGP' : '$20',
                                     yearlyRenewal: country === "EG" ? '400 EGP' : '$10',
                                     desc: 'Perfect for Personal',
-                                    features: ['Social Media', 'Phone Numbers & Locations', 'Custom Color', 'Custom Title & Description', 'Custom Logo & favicon'],
+                                    features: [
+                                        'Social Media',
+                                        'Phone Numbers & Locations',
+                                        'Custom Color',
+                                        'Custom Title & Description',
+                                        'Custom Logo & favicon',
+                                        "support for two languages"
+                                    ],
                                     featured: false
                                 },
                                 {
@@ -379,15 +392,34 @@ export default function QRGeneratorLanding() {
                                     price: country === "EG" ? '1000 EGP' : '$25',
                                     yearlyRenewal: country === "EG" ? '500 EGP' : '$12',
                                     desc: 'Best for businesses',
-                                    features: ['Social Media', 'Phone Numbers & Locations', 'Custom Color', 'Custom Title & Description', 'Custom Logo & favicon', '10 Custom Images', 'Custom Section If Needed'],
+                                    features: [
+                                        'Social Media',
+                                        'Phone Numbers & Locations',
+                                        'Custom Color',
+                                        'Custom Title & Description',
+                                        'Custom Logo & favicon',
+                                        '10 Custom Images',
+                                        'Custom Section If Needed',
+                                        "support for two languages"
+                                    ],
                                     featured: true
                                 },
                                 {
                                     title: 'Enterprise',
-                                    price: country === "EG" ? '1500 EGP' : '$35',
-                                    yearlyRenewal: country === "EG" ? '700 EGP' : '$15',
+                                    price: country === "EG" ? '1800 EGP' : '$40',
+                                    yearlyRenewal: country === "EG" ? '800 EGP' : '$20',
                                     desc: 'For large all organizations',
-                                    features: ['Social Media', 'Phone Numbers & Locations', 'Custom Color', 'Custom Title & Description', 'Custom Logo & favicon', '20 Custom Images', 'Custom Section If Needed', 'Custom Style If Needed'],
+                                    features: [
+                                        'Social Media',
+                                        'Phone Numbers & Locations',
+                                        'Custom Color',
+                                        'Custom Title & Description',
+                                        'Custom Logo & favicon',
+                                        '20 Custom Images',
+                                        'Custom Section If Needed',
+                                        'Custom Style If Needed',
+                                        "support for two languages"
+                                    ],
                                     featured: false
                                 },
                             ].map((plan) => (
@@ -400,8 +432,8 @@ export default function QRGeneratorLanding() {
                                                     <Typography variant="h5" gutterBottom fontWeight="bold">{plan.title}</Typography>
                                                     <Typography variant="h3" fontWeight="bold" sx={{ my: 2 }}>{plan.price}</Typography>
                                                     <Typography color="text.secondary" gutterBottom>{plan.desc}</Typography>
-                                                    <Typography  gutterBottom fontWeight={"bold"}>
-                                                         Yearly: {plan.yearlyRenewal}
+                                                    <Typography gutterBottom fontWeight={"bold"}>
+                                                        Yearly: {plan.yearlyRenewal}
                                                     </Typography>
                                                 </Stack>
 
