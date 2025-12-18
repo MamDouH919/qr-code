@@ -19,6 +19,7 @@ import { BackgroundContainer, BackgroundImage, Overlay, ProfileImage, ProfileIma
 import LanguageIcon from "@/components/LanguageIcon";
 import Footer from "@/components/Footer";
 import Description from "@/components/Description";
+import SaveContact from "@/components/AddToContact";
 
 /* ---------------- styled components ---------------- */
 
@@ -26,6 +27,7 @@ import Description from "@/components/Description";
 /* ---------------- page component ---------------- */
 
 const folderName = "jeep-city";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 const ArabClinicPage = () => {
     const [ready, setReady] = useState(false);
@@ -52,10 +54,10 @@ const ArabClinicPage = () => {
         <CacheProvider value={cache}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <LanguageIcon
+                {data.multiLanguage && <LanguageIcon
                     handleChangeLanguage={setLanguage}
                     language={language === "ar" ? "en" : "ar"}
-                />
+                />}
 
                 <Stack spacing={0}>
                     {/* HEADER */}
@@ -76,6 +78,13 @@ const ArabClinicPage = () => {
                     {/* NAME */}
                     <ProfileName>{data.name}</ProfileName>
                     <Stack spacing={4} mt={4}>
+                        {/* <SaveContact
+                            links={data.socials.map((social) => social.link)}
+                            name={data.name}
+                            phoneNumbers={[]}
+                            photoUrl={siteUrl + data.id + "/logo.webp"}
+                            role={data.role}
+                        /> */}
                         <Description description={data.description} />
                         {/* SOCIAL */}
                         <SocialMediaLinks links={data.socials} />

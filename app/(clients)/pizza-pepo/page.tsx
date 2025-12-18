@@ -51,10 +51,10 @@ const Page = () => {
         <CacheProvider value={cache}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <LanguageIcon
+                {data.multiLanguage && <LanguageIcon
                     handleChangeLanguage={setLanguage}
                     language={language === "ar" ? "en" : "ar"}
-                />
+                />}
 
                 <Stack spacing={0}>
                     {/* HEADER */}

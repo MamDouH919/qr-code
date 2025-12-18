@@ -16,6 +16,9 @@ const ScrollContainer = styled(Box)(({ theme }) => ({
         width: '100px',
         zIndex: 2,
         pointerEvents: 'none',
+        [theme.breakpoints.down('sm')]: {
+            width: '40px',
+        },
     },
     '&::before': {
         left: 0,
@@ -27,12 +30,17 @@ const ScrollContainer = styled(Box)(({ theme }) => ({
     },
 }));
 
-const ScrollTrack = styled(Box)({
+const ScrollTrack = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: '24px',
+    width: 'fit-content',
     animation: 'scroll 40s linear infinite',
     '&:hover': {
         animationPlayState: 'paused',
+    },
+    [theme.breakpoints.down('sm')]: {
+        gap: '16px',
+        animation: 'scroll 30s linear infinite',
     },
     '@keyframes scroll': {
         '0%': {
@@ -42,7 +50,7 @@ const ScrollTrack = styled(Box)({
             transform: 'translateX(-50%)',
         },
     },
-});
+}));
 
 const ImageCard = styled(Box)(({ theme }) => ({
     position: 'relative',
@@ -56,6 +64,14 @@ const ImageCard = styled(Box)(({ theme }) => ({
     '&:hover': {
         transform: 'translateY(-8px)',
         boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+    },
+    [theme.breakpoints.down('md')]: {
+        width: '250px',
+        height: '170px',
+    },
+    [theme.breakpoints.down('sm')]: {
+        width: '200px',
+        height: '140px',
     },
 }));
 
@@ -84,20 +100,35 @@ export const ourClients = [
 ];
 
 const CustomerImagesSection = () => {
-    // Duplicate the array to create seamless infinite scroll
+    // Duplicate the array multiple times to create seamless infinite scroll
     const duplicatedImages = [
+        ...ourClients,
+        ...ourClients,
         ...ourClients,
         ...ourClients,
     ];
 
     return (
-        <Box sx={{ py: 10, }}>
+        <Box sx={{ py: { xs: 6, md: 10 } }}>
             <Container maxWidth="lg">
-                <Box sx={{ textAlign: 'center', mb: 6 }}>
-                    <Typography variant="h3" gutterBottom fontWeight="bold">
+                <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 6 } }}>
+                    <Typography 
+                        variant="h3" 
+                        gutterBottom 
+                        fontWeight="bold"
+                        sx={{
+                            fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3rem' }
+                        }}
+                    >
                         Trusted by Businesses Worldwide
                     </Typography>
-                    <Typography variant="h6" color="text.secondary">
+                    <Typography 
+                        variant="h6" 
+                        color="text.secondary"
+                        sx={{
+                            fontSize: { xs: '1rem', sm: '1.15rem', md: '1.25rem' }
+                        }}
+                    >
                         See how our customers are using QR codes to transform their business
                     </Typography>
                 </Box>
@@ -113,7 +144,7 @@ const CustomerImagesSection = () => {
                                     alt={image.name}
                                     fill
                                     style={{ objectFit: 'cover' }}
-                                    sizes="300px"
+                                    sizes="(max-width: 600px) 200px, (max-width: 960px) 250px, 300px"
                                 />
                             </Link>
                         </ImageCard>
