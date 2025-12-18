@@ -1,13 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+function getClientIp(req: NextRequest) {
     const forwarded = req.headers.get("x-forwarded-for");
-    console.log({ forwarded: forwarded });
+    const realIp = req.headers.get("x-real-ip");
 
-    const ip = forwarded?.split(",")[0] || "8.8.8.8"; // fallback
+    if (forwarded) return forwarded.split(",")[0].trim();
+    if (realIp) return realIp;
+    return "8.8.8.8";
+}
+
+export async function GET(req: NextRequest) {
+    const ip = getClientIp(req);
 
     const res = await fetch(
-        `https://ipinfo.io/${ip}?token=${process.env.NEXT_PUBLIC_IPINFO_TOKEN}`,
+        `https://ipinfo.io/${ip}?token=${process.env.IPINFO_TOKEN}`,
         { cache: "no-store" }
     );
 
