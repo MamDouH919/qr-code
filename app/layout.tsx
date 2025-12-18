@@ -228,9 +228,6 @@ export default async function RootLayout({
   const host = (await headers()).get("host");
   const domain = host?.split(":")[0];
 
-  const res = await fetch(process.env.NEXT_PUBLIC_SITE_URL + "/api/geo", { cache: "no-store" });
-  const geo = await res.json();
-
   if (domain === "qr.arabclinic.net") {
     return <ArabClinicLayout />
   }
@@ -297,9 +294,7 @@ export default async function RootLayout({
       </head>
       <body className={cairo.className}>
         <Suspense fallback={null}>
-          <ClientProvider country={geo.country}>
-            {children}
-          </ClientProvider>
+          {children}
         </Suspense>
         <Analytics />
       </body>
