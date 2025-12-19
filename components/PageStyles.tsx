@@ -8,14 +8,14 @@ export const BackgroundContainer = styled(Box)({
     position: "relative",
 });
 
-export const BackgroundImage = styled(Box)<{ backgroundimage: string }>(
-    ({ backgroundimage }) => ({
+export const BackgroundImage = styled(Box)<{ backgroundimage: string, blur?: string }>(
+    ({ backgroundimage, blur = "blur(10px)" }) => ({
         height: 300,
         width: "100%",
         backgroundImage: `url('${backgroundimage}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        filter: "blur(4px)",
+        filter: blur,
     })
 );
 

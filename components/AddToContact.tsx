@@ -72,7 +72,7 @@ const SaveContact = ({
         let photoLine = "";
 
         // Only iOS safely supports PHOTO in vCard from browser
-        if (!isAndroid && photoUrl) {
+        if (photoUrl) {
             try {
                 const base64Image = await imageUrlToBase64(photoUrl);
                 photoLine = `PHOTO;ENCODING=b;TYPE=JPEG:${base64Image}`;

@@ -1,0 +1,56 @@
+{
+    "id": "dr-dalia",
+    "active": true,
+    "name": "Dr. Dalia A.abdulrahman",
+    "subName": "(Green Growth)",
+    "role": "Green Growth",
+    "lastUpdated": "2026-1-1",
+    "description": "Prof. Dalia worked as a senior consultant in many big referral centres in and outside Egypt. She has the position of the head and director of pediatric and neonatal intensive care units in Saudi Arabia and Egypt.",
+    "color": "#28ac75",
+    "countryCode": "+2",
+    "multiLanguage": false,
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/greengrowtheg"
+        },
+        {
+            "code": "TK",
+            "link": "https://www.tiktok.com/@drdaliagreengrowth"
+        },
+        {
+            "code": "WS",
+            "link": "https://drdalia-childshub.com/"
+        },
+        {
+            "code": "YT",
+            "link": "https://www.youtube.com/@drdaliagreengrowth"
+        },
+        {
+            "code": "LI",
+            "link": "https://www.linkedin.com/in/prof-dalia-a-abdulrahman-0475403a/"
+        },
+        {
+            "code": "IG",
+            "link": "https://www.instagram.com/greengrowtheg"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "مدينتي",
+                "en": "Madenty"
+            },
+            "numbers": [
+                {
+                    "number": "+201067710688",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "location": "https://maps.app.goo.gl/cvMnFWpCJtZy9ZVB8?g_st=aw"
+        }
+    ]
+}

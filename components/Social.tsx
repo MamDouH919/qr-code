@@ -68,7 +68,7 @@ const SOCIAL_CONFIG: SocialConfig[] = [
     {
         code: 'LI',
         name: 'LinkedIn',
-        nameAr: 'لينكداين',
+        nameAr: 'لينكد ان',
         icon: <LinkedIn />,
         gradient: 'linear-gradient(135deg, #0077B5, #005885)'
     },
