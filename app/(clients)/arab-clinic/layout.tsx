@@ -54,7 +54,7 @@ export const ArabClinicMetaData: Metadata = {
   },
   icons: {
     icon: '/arab-clinic/favicon.ico',
-    apple: '/arab-clinic/apple-touch-icon.png',
+    apple: '/arab-clinic/apple-icon.png',
   },
   other: {
     'geo.region': 'EG',

@@ -55,7 +55,7 @@ export const ThreebakyMetaData: Metadata = {
   },
   icons: {
     icon: '/3baky/favicon.ico',
-    apple: '/3baky/apple-touch-icon.png',
+    apple: '/3baky/apple-icon.png',
   },
   other: {
     'geo.region': 'EG',

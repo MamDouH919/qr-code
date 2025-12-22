@@ -55,7 +55,7 @@ export const ThreebakyMetaData: Metadata = {
   },
   icons: {
     icon: '/guzel/favicon.ico',
-    apple: '/guzel/apple-touch-icon.png',
+    apple: '/guzel/apple-icon.png',
   },
 }
 export const metadata: Metadata = ThreebakyMetaData;

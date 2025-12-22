@@ -56,7 +56,7 @@ export const GreenGrowthMetaData: Metadata = {
   },
   icons: {
     icon: '/dr-dalia/favicon.ico',
-    apple: '/dr-dalia/apple-touch-icon.png',
+    apple: '/dr-dalia/apple-icon.png',
   },
   other: {
     'geo.region': 'EG',

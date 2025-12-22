@@ -55,7 +55,7 @@ export const SteakBurgerMetaData: Metadata = {
   },
   icons: {
     icon: '/steakburger/favicon.ico',
-    apple: '/steakburger/apple-touch-icon.png',
+    apple: '/steakburger/apple-icon.png',
   },
   other: {
     'geo.region': 'YE',

@@ -55,7 +55,7 @@ export const EliteBridgeMetaData: Metadata = {
   },
   icons: {
     icon: '/elite-bridge/favicon.ico',
-    apple: '/elite-bridge/apple-touch-icon.png',
+    apple: '/elite-bridge/apple-icon.png',
   },
   other: {
     'geo.region': 'AE-DU',

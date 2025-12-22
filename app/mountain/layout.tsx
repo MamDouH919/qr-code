@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/mountain/favicon.ico',
-    apple: '/mountain/apple-touch-icon.png',
+    apple: '/mountain/apple-icon.png',
   },
   other: {
     'language': 'English',

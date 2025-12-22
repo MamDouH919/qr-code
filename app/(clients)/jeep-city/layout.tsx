@@ -55,7 +55,7 @@ export const JeepCityMetaData: Metadata = {
   },
   icons: {
     icon: '/jeep-city/favicon.ico',
-    apple: '/jeep-city/apple-touch-icon.png',
+    apple: '/jeep-city/apple-icon.png',
   },
   other: {
     'geo.region': 'EG',

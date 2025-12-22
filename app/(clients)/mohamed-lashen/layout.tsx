@@ -55,7 +55,7 @@ export const DrLashinMetaData: Metadata = {
   },
   icons: {
     icon: '/mohamed-lashen/favicon.ico',
-    apple: '/mohamed-lashen/apple-touch-icon.png',
+    apple: '/mohamed-lashen/apple-icon.png',
   },
   other: {
     'geo.region': 'EG',

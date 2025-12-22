@@ -13,7 +13,6 @@ import ArabClinicLayout from "@/domains/ArabClinic"
 import { ArabClinicMetaData } from "./(clients)/arab-clinic/layout"
 import DrCoffeeLayout from "@/domains/DrCoffee"
 import { DrCoffeeMetaData } from "./(clients)/dr-coffee/layout"
-import ClientProvider from "@/lib/country-provider"
 
 const cairo = Cairo({
   weight: ["600", "700", "800"],
@@ -95,7 +94,7 @@ export async function generateMetadata(): Promise<Metadata> {
         { url: '/mountain/icon0.svg', sizes: '16x16', type: 'image/png' },
         { url: '/mountain/icon1.png', sizes: '32x32', type: 'image/png' },
       ],
-      apple: '/apple-touch-icon.png',
+      apple: '/mountain/apple-icon.png',
       other: [
         {
           rel: 'mask-icon',

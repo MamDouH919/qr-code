@@ -55,7 +55,7 @@ export const ShaebiiatZadMetaData: Metadata = {
   },
   icons: {
     icon: '/shaebiaat-zad/favicon.ico',
-    apple: '/shaebiaat-zad/apple-touch-icon.png',
+    apple: '/shaebiaat-zad/apple-icon.png',
   },
   other: {
     'geo.region': 'SA-08',
