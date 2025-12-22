@@ -1,0 +1,36 @@
+{
+    "id": "shaebiaat-zad",
+    "active": true,
+    "name": "Shaebiaat Zad",
+    "multiLanguage": false,
+    "description": "شعبيات زاد، مطعم طعام سريع يقدم الطعم الأصلي للأكل الشعبي السعودي. استمتع بأشهى المأكولات الشعبية والتقليدية في تبوك. نقدم وجبات سريعة بجودة عالية ونكهة أصيلة.",
+    "color": "#368e99",
+    "countryCode": "+966",
+    "role": "Guzel",
+    "lastUpdated": "2026-1-1",
+    "socials": [
+        {
+            "code": "IG",
+            "link": "https://www.instagram.com/shaebiaat.zad"
+        },
+        {
+            "code": "TK",
+            "link": "https://www.tiktok.com/@shaebiaat.zad"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": "تبوك / العليا",
+            "numbers": [
+                {
+                    "number": "+9660537000750",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "location": "https://maps.app.goo.gl/1GAehsrmDKSbLbqu5"
+        }
+    ]
+}

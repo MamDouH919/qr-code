@@ -1,0 +1,26 @@
+{
+    "id": "elite-bridge",
+    "active": true,
+    "name": "Elite Bridge",
+    "multiLanguage": false,
+    "description": "Elite Bridge provides comprehensive business services in the UAE, including Amer, Tasheel, Tawjeeh, and Dubai Economy support. Professional solutions for companies of all sizes.",
+    "color": "#b48a34",
+    "countryCode": "+966",
+    "role": "Elite Bridge",
+    "lastUpdated": "2026-1-1",
+    "socials": [
+        {
+            "code": "WS",
+            "link": "https://elite-bridge.ae/en"
+        },
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/EliteBridgeBusinessmenServices/?rdid=rgWA5BB9nooj7A0p"
+        },
+        {
+            "code": "IG",
+            "link": "https://www.instagram.com/elitebridge0"
+        }
+    ],
+    "branches": []
+}

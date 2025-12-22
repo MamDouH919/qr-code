@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Script from "next/script";
 
-const siteUrl = "https://qr-test.mountain-egy.site/";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 const siteName = "Dr Coffee - بن الدكتور";
 const siteTitle = "Dr Coffee - بن الدكتور | كافيه وقهوة مختصة في مدينة نصر";
 const siteDescription =
@@ -9,12 +9,12 @@ const siteDescription =
 
 const siteKeywords =
   "Dr Coffee, بن الدكتور, دكتور كوفي, كافيه مدينة نصر, قهوة مختصة مدينة نصر, coffee shop Nasr City, specialty coffee Egypt";
-  
+
 const ogImage = "/dr-coffee/logo.webp";
 const icon = "/dr-coffee/favicon.ico";
 
 export const DrCoffeeMetaData: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl ?? ""),
   title: siteTitle,
   description: siteDescription,
   keywords: siteKeywords,

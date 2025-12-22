@@ -1,0 +1,37 @@
+{
+    "id": "steakburger",
+    "active": true,
+    "name": "Steak Burger",
+    "multiLanguage": false,
+    "description": "ستيك برجر، أفضل مطعم برجر في اليمن. نقدم أشهى أنواع البرجر المشوي على الفحم مع البطاطس المقرمشة والمشروبات الطازجة. فرعنا في نادي الوحدة يقدم لك تجربة طعام لا تُنسى مع أجود أنواع اللحوم والمكونات الطازجة.",
+    "color": "#f46700",
+    "countryCode": "+967",
+    "role": "Steak Burger",
+    "lastUpdated": "2026-1-1",
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/Steakburger1.ye"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": "فرع نادي الوحدة",
+            "numbers": [
+                {
+                    "number": "+967771375555",
+                    "type": [
+                        "mobile"
+                    ]
+                },
+                {
+                    "number": "+967771372222",
+                    "type": [
+                        "mobile"
+                    ]
+                }
+            ],
+            "location": "https://maps.app.goo.gl/w9RmhBkVz6BDfhqH7"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "id": "3baky",
+    "active": true,
+    "name": "3baky",
+    "multiLanguage": false,
+    "description": "ِAbd-Elbaki Cars عبد الباقي لتأجير السيارات وخدمات الليموزين",
+    "color": "#dd1144",
+    "countryCode": "+2",
+    "role": "3baky",
+    "lastUpdated": "2026-1-1",
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/3bakicars?mibextid=LQQJ4d"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "القليوبية",
+                "en": "El-Qalyoubiya"
+            },
+            "numbers": [
+                {
+                    "number": "+201270328047",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "location": "https://maps.app.goo.gl/xy6s9dMikWH35srh7"
+        }
+    ]
+}

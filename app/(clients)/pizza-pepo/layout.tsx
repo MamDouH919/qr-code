@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 
-const siteUrl = 'https://pizzapepo.com/';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 const siteName = 'Pizza Pepo';
 const siteTitle = 'Pizza Pepo - مطعم بيتزا ببنها';
 const siteDescription = "بيتزا بيبو - أفضل مطعم بيتزا في بنها، القليوبية. نقدم بيتزا طازجة ولذيذة مع أجود المكونات وأفضل الأسعار. توصيل سريع لجميع أنحاء بنها.";
@@ -10,7 +10,7 @@ const ogImage = `/pizza-pepo/logo.webp`;
 const icon = '/pizza-pepo/favicon.ico';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl ?? ""),
   title: siteTitle,
   description: siteDescription,
   keywords: siteKeywords,

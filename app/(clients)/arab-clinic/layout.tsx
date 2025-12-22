@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 
-const siteUrl = 'https://qr-test.mountain-egy.site/';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 const siteName = 'Arab Clinic';
 const siteTitle = 'Arab Clinic - Medical Center';
 const siteDescription = "Arab Clinic Center, established in 2018, is one of Egypt's premier healthcare providers with branches in Qalyubia, Obour City, Shebin El Qanater, and Meet Ghamr. We offer exceptional medical care across all specialties with highly qualified doctors and state-of-the-art facilities.";
@@ -9,7 +9,7 @@ const siteKeywords = 'Arab Clinic, medical center Egypt, healthcare Qalyubia, Ab
 const ogImage = `/arab-clinic/logo.webp`;
 
 export const ArabClinicMetaData: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl ?? ""),
   title: siteTitle,
   description: siteDescription,
   keywords: siteKeywords,

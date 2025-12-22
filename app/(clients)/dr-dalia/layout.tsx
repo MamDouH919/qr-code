@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 
-const siteUrl = 'https://greengrowth-clinic.com/'; // Update with actual URL
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 const siteName = 'Green Growth Clinic';
 const siteTitle = 'Green Growth - Your Child Health and Welfare is Here';
 const siteDescription = "Green Growth Clinic, led by Prof. Dalia A. Abdulrahman, specializes in pediatric and neonatal care. Prof. Dalia has served as a senior consultant in major referral centers in Egypt and internationally, with extensive experience as head and director of pediatric and neonatal intensive care units in Saudi Arabia and Egypt.";
@@ -9,7 +9,7 @@ const siteKeywords = 'Green Growth Clinic, Dr. Dalia Abdulrahman, pediatric care
 const ogImage = `/dr-dalia/logo.webp`;
 
 export const GreenGrowthMetaData: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl ?? ""),
   title: siteTitle,
   description: siteDescription,
   keywords: siteKeywords,
@@ -183,7 +183,7 @@ export default function Layout({
           __html: JSON.stringify(GreenGrowthJsonLd.breadcrumb),
         }}
       />
-      
+
       {children}
     </>
   );

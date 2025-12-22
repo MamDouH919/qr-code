@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 
-const siteUrl = 'https://jeep-city.example.com/';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+
 const siteName = 'جيب سيتي';
 const siteTitle = 'جيب سيتي - مركز صيانة سيارات جيب';
 const siteDescription = "جيب سيتي، مركز متخصص في صيانة وإصلاح سيارات الجيب بجميع أنواعها. نقدم خدمات صيانة احترافية بأعلى جودة وأحدث المعدات في القاهرة الجديدة - مدينة الرحاب. فريق عمل متخصص وقطع غيار أصلية لضمان أفضل أداء لسيارتك.";
@@ -9,7 +10,7 @@ const siteKeywords = 'جيب سيتي, صيانة جيب, إصلاح سيارا�
 const ogImage = `/jeep-city/logo.webp`;
 
 export const JeepCityMetaData: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl ?? ""),
   title: siteTitle,
   description: siteDescription,
   keywords: siteKeywords,

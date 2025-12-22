@@ -78,14 +78,14 @@ const ImageCard = styled(Box)(({ theme }) => ({
 // Sample customer images data
 export const ourClients = [
     {
-        id: "dr-coffee",
-        name: "Dr Coffee",
-        src: "/dr-coffee/logo.webp",
-    },
-    {
         id: "arab-clinic",
         name: "Arab Clinic",
         src: "/arab-clinic/logo.webp",
+    },
+    {
+        id: "dr-coffee",
+        name: "Dr Coffee",
+        src: "/dr-coffee/logo.webp",
     },
     {
         id: "pizza-pepo",
@@ -96,7 +96,42 @@ export const ourClients = [
         id: "jeep-city",
         name: "Jeep City",
         src: "/jeep-city/logo.webp",
-    }
+    },
+    {
+        id: "steakburger",
+        name: "Steak Burger",
+        src: "/steakburger/logo.webp",
+    },
+    {
+        id: "shaebiaat-zad",
+        name: "شعبيات زاد",
+        src: "/shaebiaat-zad/logo.webp",
+    },
+    {
+        id: "dr-dalia",
+        name: "Dr. Dalia A.abdulrahman",
+        src: "/dr-dalia/logo.webp",
+    },
+    {
+        id: "mohamed-lashen",
+        name: "د. محمد لاشين",
+        src: "/mohamed-lashen/logo.webp",
+    },
+    {
+        id: "3baky",
+        name: "3baky",
+        src: "/3baky/logo.webp",
+    },
+    {
+        id: "elite-bridge",
+        name: "Elite Bridge",
+        src: "/elite-bridge/logo.webp",
+    },
+    {
+        id: "guzel",
+        name: "guzel",
+        src: "/guzel/logo.webp",
+    },
 ];
 
 const CustomerImagesSection = () => {
@@ -112,9 +147,9 @@ const CustomerImagesSection = () => {
         <Box sx={{ py: { xs: 6, md: 10 } }}>
             <Container maxWidth="lg">
                 <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 6 } }}>
-                    <Typography 
-                        variant="h3" 
-                        gutterBottom 
+                    <Typography
+                        variant="h3"
+                        gutterBottom
                         fontWeight="bold"
                         sx={{
                             fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3rem' }
@@ -122,8 +157,8 @@ const CustomerImagesSection = () => {
                     >
                         Trusted by Businesses Worldwide
                     </Typography>
-                    <Typography 
-                        variant="h6" 
+                    <Typography
+                        variant="h6"
                         color="text.secondary"
                         sx={{
                             fontSize: { xs: '1rem', sm: '1.15rem', md: '1.25rem' }
