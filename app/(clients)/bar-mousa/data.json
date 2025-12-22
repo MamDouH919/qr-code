@@ -1,0 +1,67 @@
+{
+    "id": "bar-mousa",
+    "active": true,
+    "name": "بار موسى",
+    "role": "بار موسى",
+    "color": "#f66c3b",
+    "secondColor": "#dbb78c",
+    "countryCode": "+2",
+    "multiLanguage": false,
+    "lastUpdated": "2026-1-1",
+    "description": "بار موسى - أفضل مجمع مطاعم وكافيهات في بنها، القليوبية. نقدم تجربة طعام فريدة مع أجود المأكولات والمشروبات في أجواء راقية ومريحة. فرع بنها يقدم لك خيارات متنوعة من المطاعم والكافيهات تحت سقف واحد.",
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/Spaghttii"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "فرع بنها",
+                "en": ""
+            },
+            "numbers": [
+                {
+                    "number": "+201014939291",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "location": "https://www.google.com/maps/dir/30.4676864,31.1820288/30.4566989,31.1874951/@30.461266,31.1725973,15z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0?entry=ttu&g_ep=EgoyMDI0MTExMi4wIKXMDSoASAFQAw%3D%3D"
+        }
+    ],
+    "menu1": [
+        "/menu/bar-mousa/menu1.webp",
+        "/menu/bar-mousa/menu2.webp"
+    ],
+    "menu2": [
+        "/menu/pizza-pepo/menu1.webp",
+        "/menu/pizza-pepo/menu2.webp"
+    ],
+    "menu3": [
+        "/menu/category/menu1.webp",
+        "/menu/category/menu2.webp",
+        "/menu/category/menu3.webp",
+        "/menu/category/menu4.webp",
+        "/menu/category/menu5.webp",
+        "/menu/category/menu6.webp",
+        "/menu/category/menu7.webp",
+        "/menu/category/menu8.webp",
+        "/menu/category/menu9.webp",
+        "/menu/category/menu10.webp",
+        "/menu/category/menu11.webp"
+    ],
+    "menu4": [
+        "/menu/7elwX7elw/menu1.webp",
+        "/menu/7elwX7elw/menu2.webp"
+    ],
+    "menu5": [
+        "/menu/kebdaToGo/menu1.webp"
+    ],
+    "menu6": [
+        "/menu/shawaya/menu1.webp"
+    ]
+}

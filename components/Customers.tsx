@@ -98,6 +98,11 @@ export const ourClients = [
         src: "/jeep-city/logo.webp",
     },
     {
+        id: "bar-mousa",
+        name: "بار موسى",
+        src: "/bar-mousa/logo.webp",
+    },
+    {
         id: "steakburger",
         name: "Steak Burger",
         src: "/steakburger/logo.webp",
@@ -132,6 +137,7 @@ export const ourClients = [
         name: "guzel",
         src: "/guzel/logo.webp",
     },
+
 ];
 
 const CustomerImagesSection = () => {
@@ -144,7 +150,7 @@ const CustomerImagesSection = () => {
     ];
 
     return (
-        <Box sx={{ py: { xs: 6, md: 10 } }}>
+        <Box sx={{ py: { xs: 6, md: 10 } }} id="clients">
             <Container maxWidth="lg">
                 <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 6 } }}>
                     <Typography

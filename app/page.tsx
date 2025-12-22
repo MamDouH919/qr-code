@@ -156,6 +156,25 @@ export default function QRGeneratorLanding() {
         getVisitorInfo();
     }, [])
 
+
+    const openWhatsApp = (plan: any) => {
+        const phone = "201552455177"; // your WhatsApp number (with country code)
+
+        const message = `
+            Hello 👋
+            I’m interested in the *${plan.title}* plan.
+
+            💰 Price: ${plan.price}
+            🔁 Renewal after: ${plan.billingCycle} year(s)
+            📌 Renewal price: ${plan.yearlyRenewal}
+
+            🌍 Country: ${country}
+            `.trim();
+
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    };
+
     return (
         <CacheProvider value={cache}>
             <ThemeProvider
@@ -186,10 +205,27 @@ export default function QRGeneratorLanding() {
                                 </Typography>
 
                                 <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap', mb: 4 }}>
-                                    <Button variant="contained" size="large" endIcon={<ArrowForward />}>
+                                    <Button
+                                        variant="contained"
+                                        size="large"
+                                        endIcon={<ArrowForward />}
+                                        onClick={() => {
+                                            document.getElementById('pricing')?.scrollIntoView({
+                                                behavior: 'smooth',
+                                            });
+                                        }}
+                                    >
                                         Get Your QR Now
                                     </Button>
-                                    <Button variant="outlined" size="large">
+                                    <Button
+                                        variant="outlined"
+                                        size="large"
+                                        onClick={() => {
+                                            document.getElementById('clients')?.scrollIntoView({
+                                                behavior: 'smooth',
+                                            });
+                                        }}
+                                    >
                                         View Examples
                                     </Button>
                                 </Box>
@@ -382,7 +418,7 @@ export default function QRGeneratorLanding() {
                     </Container>
 
                     {/* Pricing */}
-                    <Container maxWidth="lg" sx={{ py: 10 }}>
+                    <Container maxWidth="lg" sx={{ py: 10 }} id="pricing">
                         <Box sx={{ textAlign: 'center', mb: 8 }}>
                             <Typography variant="h3" gutterBottom fontWeight="bold">Simple, Transparent Pricing</Typography>
                             <Typography variant="h6" color="text.secondary">
@@ -397,6 +433,7 @@ export default function QRGeneratorLanding() {
                                     price: country === "EG" ? '800 EGP' : '$20',
                                     yearlyRenewal: country === "EG" ? '400 EGP' : '$10',
                                     desc: 'Perfect for Personal',
+                                    billingCycle: 1,
                                     features: [
                                         'Social Media',
                                         'Phone Numbers & Locations',
@@ -412,6 +449,7 @@ export default function QRGeneratorLanding() {
                                     price: country === "EG" ? '1000 EGP' : '$25',
                                     yearlyRenewal: country === "EG" ? '500 EGP' : '$12',
                                     desc: 'Best for businesses',
+                                    billingCycle: 1,
                                     features: [
                                         'Social Media',
                                         'Phone Numbers & Locations',
@@ -429,6 +467,7 @@ export default function QRGeneratorLanding() {
                                     price: country === "EG" ? '1800 EGP' : '$40',
                                     yearlyRenewal: country === "EG" ? '800 EGP' : '$20',
                                     desc: 'For large all organizations',
+                                    billingCycle: 2,
                                     features: [
                                         'Social Media',
                                         'Phone Numbers & Locations',
@@ -452,8 +491,8 @@ export default function QRGeneratorLanding() {
                                                     <Typography variant="h5" gutterBottom fontWeight="bold">{plan.title}</Typography>
                                                     <Typography variant="h3" fontWeight="bold" sx={{ my: 2 }}>{plan.price}</Typography>
                                                     <Typography color="text.secondary" gutterBottom>{plan.desc}</Typography>
-                                                    <Typography gutterBottom fontWeight={"bold"}>
-                                                        Yearly: {plan.yearlyRenewal}
+                                                    <Typography gutterBottom fontWeight="bold">
+                                                        Renewal after {plan.billingCycle} year{plan.billingCycle > 1 ? 's' : ''}: {plan.yearlyRenewal}
                                                     </Typography>
                                                 </Stack>
 
@@ -467,7 +506,12 @@ export default function QRGeneratorLanding() {
                                                         ))}
                                                     </Box>
 
-                                                    <Button variant="contained" fullWidth size="large">
+                                                    <Button
+                                                        variant="contained"
+                                                        fullWidth
+                                                        size="large"
+                                                        onClick={() => openWhatsApp(plan)}
+                                                    >
                                                         {plan.title === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
                                                     </Button>
                                                 </Stack>
@@ -601,8 +645,14 @@ export default function QRGeneratorLanding() {
                             <Grid container spacing={4}>
                                 <Grid size={{ xs: 12, md: 3 }}>
                                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-                                        <QrCode2 sx={{ fontSize: 32 }} />
-                                        <Typography variant="h6" fontWeight="bold">QR Pro</Typography>
+                                        <Image src="/mountain/logo.webp"
+                                            alt="QR Pro"
+                                            width={100}
+                                            height={100}
+                                            style={{
+                                                borderRadius: "100%"
+                                            }}
+                                        />
                                     </Box>
                                     <Typography variant="body2" sx={{ opacity: 0.8 }}>
                                         Professional QR code solutions for modern businesses and individuals.
@@ -632,16 +682,15 @@ export default function QRGeneratorLanding() {
                                 <Grid size={{ xs: 12, sm: 4, md: 3 }}>
                                     <Typography variant="h6" gutterBottom fontWeight="bold">Contact</Typography>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, opacity: 0.8 }}>
-                                        <Typography variant="body2">hello@qrpro.com</Typography>
-                                        <Typography variant="body2">+1 (555) 123-4567</Typography>
-                                        <Typography variant="body2">Available 9 AM - 6 PM EST</Typography>
+                                        <Typography variant="body2">+201060168136</Typography>
+                                        <Typography variant="body2">+201552455177</Typography>
                                     </Box>
                                 </Grid>
                             </Grid>
 
                             <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.2)', mt: 6, pt: 4, textAlign: 'center', opacity: 0.6 }}>
                                 <Typography variant="body2">
-                                    © 2024 QR Pro. All rights reserved. Built with modern web technologies for optimal performance.
+                                    © 2024 Mountain. All rights reserved. Built with modern web technologies for optimal performance.
                                 </Typography>
                             </Box>
                         </Container>

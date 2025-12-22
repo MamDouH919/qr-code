@@ -33,6 +33,7 @@ export default function CenteredTabs({
     tabs: {
         title: string;
         images: string[];
+        id?: string;
     }[]
     id: string;
 }) {
@@ -55,8 +56,8 @@ export default function CenteredTabs({
                 <CustomTabPanel value={value} index={i} key={e.title}>
                     <GalleryCarousel
                         images={tabs[value].images.map((image) => ({
-                            thumb: id + image,
-                            full: id + image,
+                            thumb: (tabs[value].id ? tabs[value].id : id) + image,
+                            full: (tabs[value].id ? tabs[value].id : id) + image,
                         }))}
                         height={500}
                     />
