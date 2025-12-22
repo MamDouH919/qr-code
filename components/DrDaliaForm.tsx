@@ -114,7 +114,7 @@ const DrDaliaForm = () => {
                         <Typography variant="h6" component="h2" gutterBottom>
                             طريقة الدفع
                         </Typography>
-                        <Avatar sx={{ background: "#fff", width: 80, height: 40 }}>
+                        <Avatar sx={{ background: "#fff", width: 50, height: 40 }}>
                             <Image
                                 src="/instaPay.webp"
                                 alt="Dr. Dalia A. Abdulrahman"
@@ -126,18 +126,18 @@ const DrDaliaForm = () => {
                     <Stack
                         direction="row"
                         spacing={2}
-                        dir='rtl'
+                        justifyContent={"center"}
                         component={Paper}
                         p={1}
                         alignItems={"center"}
                     // bgcolor={(th) => th.palette.primary.main}
                     >
-                        <Avatar sx={{ background: "#fff", width: 80, height: 40 }}>
-                            <WhatsApp />
-                        </Avatar>
                         <Typography variant="h6" component="h2" gutterBottom>
                             الأستشارة الاونلاين
                         </Typography>
+                        <Avatar sx={{ background: (th) => th.palette.primary.main, width: 50, height: 40 }}>
+                            <WhatsApp />
+                        </Avatar>
                     </Stack>
                 </Stack>
                 <Divider />
