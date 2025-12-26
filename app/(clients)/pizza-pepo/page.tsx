@@ -93,10 +93,6 @@ const Page = () => {
                                     {
                                         title: "بيتزا بيبو",
                                         images: data.menu1
-                                    },
-                                    {
-                                        title: "بار موسى",
-                                        images: data.menu2
                                     }
                                 ]
                             }
