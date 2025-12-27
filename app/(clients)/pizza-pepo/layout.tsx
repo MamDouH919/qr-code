@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-const siteName = 'Pizza Pepo';
-const siteTitle = 'Pizza Pepo - مطعم بيتزا ببنها';
+const siteName = 'Pizza Bebo';
+const siteTitle = 'Pizza Bebo - مطعم بيتزا ببنها';
 const siteDescription = "بيتزا بيبو - أفضل مطعم بيتزا في بنها، القليوبية. نقدم بيتزا طازجة ولذيذة مع أجود المكونات وأفضل الأسعار. توصيل سريع لجميع أنحاء بنها.";
-const siteKeywords = 'بيتزا بيبو, Pizza Pepo, مطعم بيتزا بنها, بيتزا القليوبية, توصيل بيتزا بنها, مطاعم بنها, أفضل بيتزا في بنها, pizza delivery Benha, Benha restaurants, Egyptian pizza';
+const siteKeywords = 'بيتزا بيبو, Pizza Bebo, مطعم بيتزا بنها, بيتزا القليوبية, توصيل بيتزا بنها, مطاعم بنها, أفضل بيتزا في بنها, pizza delivery Benha, Benha restaurants, Egyptian pizza';
 const ogImage = `/pizza-pepo/logo.webp`;
 const icon = '/pizza-pepo/favicon.ico';
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
   keywords: siteKeywords,
-  authors: [{ name: 'Pizza Pepo' }],
+  authors: [{ name: 'Pizza Bebo' }],
   robots: {
     index: true,
     follow: true,
@@ -100,7 +100,7 @@ const jsonLd = {
     },
     hasMenu: {
       '@type': 'Menu',
-      name: 'Pizza Pepo Menu',
+      name: 'Pizza Bebo Menu',
     },
     acceptsReservations: 'True',
     paymentAccepted: ['Cash', 'Credit Card', 'Mobile Payment'],
