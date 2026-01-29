@@ -20,6 +20,7 @@ import Footer from "@/components/Footer";
 import SaveContact from "@/components/AddToContact";
 
 import Description from "@/components/Description";
+import AutoReplyWhatsapp from "@/components/AutoReplyWhatsapp";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
@@ -90,7 +91,13 @@ const ArabClinicPage = () => {
                         />
                         <Description description={data.description[language as "ar" | "en"]} />
                         {/* SOCIAL */}
+                        <AutoReplyWhatsapp language={language} number={data.autoReplyWhatsapp} />
                         <SocialMediaLinks links={data.socials} />
+
+                        <BranchLocations
+                            branches={data.dentalBranch}
+                            splitCode={data.countryCode}
+                        />
 
                         {/* BRANCHES (NESTED THEME) */}
                         <BranchLocations

@@ -11,6 +11,7 @@
     "color": "#6999d5",
     "countryCode": "+2",
     "defaultPhone": "+201550141552",
+    "autoReplyWhatsapp": "+201060095377",
     "socials": [
         {
             "code": "FB",
@@ -116,6 +117,57 @@
                 }
             ],
             "location": "https://www.google.com/maps/place/30%C2%B043'30.6%22N+31%C2%B007'19.0%22E/@30.7251701,31.1193695,17z/data=!3m1!4b1!4m4!3m3!8m2!3d30.7251701!4d31.1219444?hl=en&entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
+        },
+        {
+            "branchName": {
+                "ar": "سرياقوس",
+                "en": "Seryaqous"
+            },
+            "numbers": [
+                {
+                    "number": "+201006364547",
+                    "type": [
+                        "mobile"
+                    ]
+                },
+                {
+                    "number": "+201124666783",
+                    "type": [
+                        "mobile"
+                    ]
+                },
+                {
+                    "number": "+201202325556",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "location": "https://maps.app.goo.gl/RNPt3Gj18zvnBtxZA?g_st=aw"
+        }
+    ],
+    "dentalBranch": [
+        {
+            "branchName": {
+                "ar": "عيادة الأسنان",
+                "en": "Dental Clinic"
+            },
+            "numbers": [
+                {
+                    "number": "+201068945847",
+                    "type": [
+                        "mobile"
+                    ]
+                },
+                {
+                    "number": "+20554376050",
+                    "type": [
+                        "mobile"
+                    ]
+                }
+            ],
+            "location": "https://maps.google.com/?q=30.287989,31.746952"
         }
     ]
 }
