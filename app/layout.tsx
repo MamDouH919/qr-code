@@ -13,6 +13,8 @@ import ArabClinicLayout from "@/domains/ArabClinic"
 import { ArabClinicMetaData } from "./(clients)/arab-clinic/layout"
 import DrCoffeeLayout from "@/domains/DrCoffee"
 import { DrCoffeeMetaData } from "./(clients)/dr-coffee/layout"
+import { OSAMetaData } from "./(clients)/osa/layout"
+import OSALayout from "@/domains/OSA"
 
 const cairo = Cairo({
   weight: ["600", "700", "800"],
@@ -37,6 +39,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
   if (domain === "dr-coffee.softwave.site") {
     return DrCoffeeMetaData;
+  }
+  if (domain === "qr.osaoptics.com") {
+    return OSAMetaData;
   }
 
   return {
@@ -233,6 +238,10 @@ export default async function RootLayout({
 
   if (domain === "dr-coffee.softwave.site") {
     return <DrCoffeeLayout />
+  }
+
+  if (domain === "qr.osaoptics.com") {
+    return <OSALayout />
   }
 
   return (

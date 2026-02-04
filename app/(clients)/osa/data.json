@@ -1,0 +1,49 @@
+{
+    "id": "osa",
+    "active": true,
+    "name": "OSA",
+    "role": "Optics",
+    "lastUpdated": "2026-2-1",
+    "description": {
+        "ar": "اختار نظارتك وشوف شكلها عليك قبل الشراء. التطبيق بيمكّنك من تجربة النظارات الشمسية والطبية مباشرة على وشك، واختيار أفضل العدسات الطبية واللاصقة. كمان تقدر تختار أقرب دكتور وتحجز معاه بسهولة من خلال التطبيق",
+        "en": "Choose your glasses and see how they look on you before you buy. The app lets you try on sunglasses and prescription glasses directly on your face, and choose the best prescription and contact lenses. You can also select the nearest doctor and book an appointment easily through the app."
+    },
+    "color": "#004842",
+    "countryCode": "+2",
+    "defaultPhone": "+201124525753",
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/share/1CJYSY7u5n/?mibextid=wwXIfr"
+        },
+        {
+            "code": "IG",
+            "link": "https://www.instagram.com/osaoptics?igsh=anhibmd2cjY4bnp6&utm_source=qr"
+        },
+        {
+            "code": "WS",
+            "link": "https://osaoptics.com/"
+        },
+        {
+            "code": "TK",
+            "link": "https://www.tiktok.com/@osa.optics?_r=1&_t=ZS-93ds3AloaAb"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "للتواصل",
+                "en": "Contact Us"
+            },
+            "numbers": [
+                {
+                    "number": "+201124525753",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ]
+        }
+    ]
+}
