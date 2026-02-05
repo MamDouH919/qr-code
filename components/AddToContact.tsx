@@ -1,6 +1,5 @@
 import { PersonAdd } from '@mui/icons-material';
 import { Button, Stack, useTheme } from '@mui/material';
-import React, { useState } from 'react';
 
 const translations = {
     en: {
@@ -37,6 +36,8 @@ const SaveContact = ({
     photoUrl: string;
     role: string;
 }) => {
+    console.log({photoUrl});
+    
     const theme = useTheme();
     const language = theme.direction === 'rtl' ? 'ar' : 'en';
 

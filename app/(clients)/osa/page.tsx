@@ -20,7 +20,6 @@ import Footer from "@/components/Footer";
 import SaveContact from "@/components/AddToContact";
 
 import Description from "@/components/Description";
-import AutoReplyWhatsapp from "@/components/AutoReplyWhatsapp";
 import Apps from "@/components/Apps";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
@@ -94,7 +93,6 @@ const OSAPage = () => {
                         {/* SOCIAL */}
                         <SocialMediaLinks links={data.socials} />
                         <Apps />
-
                         {/* BRANCHES (NESTED THEME) */}
                         <BranchLocations
                             branches={data.branches}
