@@ -79,7 +79,7 @@ export const DrBahrJsonLd = {
     url: siteUrl,
     logo: `/${folderName}/logo.webp`,
     image: ogImage,
-    telephone: '+201009378216',
+    telephone: '+201035533510',
     priceRange: '$$',
     paymentAccepted: 'نقدي',
     currenciesAccepted: 'EGP',
@@ -105,7 +105,7 @@ export const DrBahrJsonLd = {
     },
     url: siteUrl,
     image: ogImage,
-    telephone: '+201009378216',
+    telephone: '+201035533510',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'كاجو مول، الشيخ زايد',
