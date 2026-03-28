@@ -1,12 +1,12 @@
 {
     "id": "dr-bahr",
     "active": true,
-    "name": "د. باهر النجار",
+    "name": "Dr. Bahr El-Najjar",
     "multiLanguage": false,
     "description": "عيادة د. باهر النجار لتقويم الأسنان، متخصصون في تقويم الأسنان بأحدث التقنيات. احجز موعدك الآن.",
     "color": "#e0b367",
     "countryCode": "+2",
-    "role": "طبيب أسنان - تقويم",
+    "role": "Orthodontist",
     "lastUpdated": "2026-3-28",
     "socials": [
         {
