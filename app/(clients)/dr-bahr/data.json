@@ -1,0 +1,39 @@
+{
+    "id": "dr-bahr",
+    "active": true,
+    "name": "د. باهر النجار",
+    "multiLanguage": false,
+    "description": "عيادة د. باهر النجار لتقويم الأسنان، متخصصون في تقويم الأسنان بأحدث التقنيات. احجز موعدك الآن.",
+    "color": "#e0b367",
+    "countryCode": "+2",
+    "role": "طبيب أسنان - تقويم",
+    "lastUpdated": "2026-3-28",
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/share/172i2ea4sx/"
+        },
+        {
+            "code": "IG",
+            "link": "https://www.instagram.com/baher.alnajjar?igsh=MTI0bDlnazAydnY3eg=="
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "الجيزة",
+                "en": "El-Giza"
+            },
+            "numbers": [
+                {
+                    "number": "+201009378216",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "location": "https://maps.app.goo.gl/a3AbefT576YfYZDQ7"
+        }
+    ]
+}

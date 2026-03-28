@@ -137,7 +137,11 @@ export const ourClients = [
         name: "guzel",
         src: "/guzel/logo.webp",
     },
-
+    {
+        id: "dr-bahr",
+        name: "بهر النجار",
+        src: "/dr-bahr/logo.webp",
+    },
 ];
 
 const CustomerImagesSection = () => {
