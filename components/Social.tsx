@@ -14,7 +14,8 @@ import {
     YouTube,
     Language,
     WhatsApp,
-    X
+    X,
+    Telegram
 } from '@mui/icons-material';
 
 interface SocialMediaLink {
@@ -35,7 +36,7 @@ const TikTokIcon = () => (
 );
 
 type SocialConfig = {
-    code: "FB" | "IG" | "X" | "LI" | "YT" | "TK" | "WG" | "WS";
+    code: "FB" | "IG" | "X" | "LI" | "YT" | "TK" | "WG" | "WS" | "TG";
     name: string;
     icon: React.ReactNode;
     gradient: string;
@@ -100,6 +101,13 @@ const SOCIAL_CONFIG: SocialConfig[] = [
         nameAr: 'موقع الويب',
         icon: <Language />,
         gradient: 'linear-gradient(135deg, #6366F1, #8B5CF6)'
+    },
+    {
+        code: "TG",
+        name: "Telegram",
+        nameAr: "تيليجرام",
+        icon: <Telegram />,
+        gradient: "linear-gradient(135deg, #0088CC, #0088CC)"
     }
 ];
 

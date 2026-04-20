@@ -49,6 +49,10 @@ type Branch = {
     };
     numbers: BranchNumber[];
     location?: string;
+    whatsAppGroup?: {
+        title: string;
+        link: string;
+    }[]
 }
 
 const translations = {
@@ -62,6 +66,7 @@ const translations = {
         "availableNow": "متاح الآن",
         "contactUs": "تواصل معنا",
         "phoneNumbers": "أرقام الهاتف",
+        "whatsappGroup": "مجموعة واتساب",
     },
     en: {
         "close": "Close",
@@ -73,6 +78,7 @@ const translations = {
         "availableNow": "Available Now",
         "contactUs": "Contact Us",
         "phoneNumbers": "Phone Numbers",
+        "whatsappGroup": "WhatsApp Group",
     }
 }
 
@@ -281,6 +287,22 @@ export default function BranchLocations({
                                                     </Button>
                                                 </Grid>
                                             }
+                                            {branch.whatsAppGroup?.map((group, gIdx) => (
+                                                <Grid size={{ xs: 12 }} key={gIdx}>
+                                                    <Button
+                                                        fullWidth
+                                                        variant="contained"
+                                                        color='success'
+                                                        component="a"
+                                                        href={group.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        startIcon={<WhatsApp />}
+                                                    >
+                                                        {group.title}
+                                                    </Button>
+                                                </Grid>
+                                            ))}
                                         </Grid>
                                     </CardContent>
                                 </Paper>

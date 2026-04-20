@@ -142,6 +142,16 @@ export const ourClients = [
         name: "بهر النجار",
         src: "/dr-bahr/logo.webp",
     },
+    {
+        id: "osa",
+        name: "OSA Optics",
+        src: "/osa/logo.webp",
+    },
+    {
+        id: "alsediq",
+        name: "Al-Sediq Optics",
+        src: "/alsediq/logo.webp",
+    }
 ];
 
 const CustomerImagesSection = () => {

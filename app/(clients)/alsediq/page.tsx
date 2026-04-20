@@ -20,7 +20,6 @@ import Footer from "@/components/Footer";
 import SaveContact from "@/components/AddToContact";
 
 import Description from "@/components/Description";
-import Apps from "@/components/Apps";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
@@ -29,7 +28,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 /* ---------------- page component ---------------- */
 
-const folderName = "osa";
+const folderName = "alsediq";
 
 const OSAPage = () => {
     const [ready, setReady] = useState(false);
@@ -92,10 +91,6 @@ const OSAPage = () => {
                         <Description description={data.description[language as "ar" | "en"]} />
                         {/* SOCIAL */}
                         <SocialMediaLinks links={data.socials} />
-                        <Apps
-                            ios={data.apps.ios}
-                            android={data.apps.android}
-                        />
                         {/* BRANCHES (NESTED THEME) */}
                         <BranchLocations
                             branches={data.branches}

@@ -1,0 +1,41 @@
+{
+    "id": "alsediq",
+    "active": true,
+    "name": "Al-SEDIQ Optics",
+    "role": "Optics",
+    "lastUpdated": "2026-2-1",
+    "description": {
+        "ar": "الصديق للبصريات — متخصصون في النظارات الطبية والشمسية والعدسات اللاصقة. اختار نظارتك وشوف شكلها عليك قبل الشراء، واحصل على أفضل العدسات الطبية واللاصقة بأعلى جودة وأفضل الأسعار.",
+        "en": "Al-Sediq Optics — specialists in prescription glasses, sunglasses, and contact lenses. Try on your glasses virtually before you buy, and get the best prescription and contact lenses at top quality and competitive prices."
+    },
+    "color": "#d15b0d",
+    "countryCode": "+2",
+    "defaultPhone": "+201124525753",
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/share/1CJYSY7u5n/?mibextid=wwXIfr"
+        },
+        {
+            "code": "TG",
+            "link": "https://t.me/alsediq"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "التحرير",
+                "en": "El-Tahrir"
+            },
+            "numbers": [
+                {
+                    "number": "+201148881471",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ]
+        }
+    ]
+}

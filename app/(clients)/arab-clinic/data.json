@@ -145,6 +145,37 @@
                 }
             ],
             "location": "https://maps.app.goo.gl/RNPt3Gj18zvnBtxZA?g_st=aw"
+        },
+        {
+            "branchName": {
+                "ar": "ناهيا",
+                "en": "Nahya"
+            },
+            "numbers": [
+                {
+                    "number": "+201555573170",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                },
+                {
+                    "number": "+201555573171",
+                    "type": [
+                        "mobile"
+                    ]
+                }
+            ],
+            "whatsAppGroup": [
+                {
+                    "title": "جروب التجميل والليزر",
+                    "link": "https://chat.whatsapp.com/DeDGGo0tV4L3l5tK5bPUD5?mode=wwc"
+                },
+                {
+                    "title": "الجروب العام",
+                    "link": "https://chat.whatsapp.com/CpCeivPzBLRKNXqNS6UmXr"
+                }
+            ]
         }
     ],
     "dentalBranch": [
