@@ -5,9 +5,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 const folderName = "alsediq"
 
 const siteName = 'الصديق للبصريات';
-const siteTitle = 'الصديق للبصريات - Al-Sediq Optics';
-const siteDescription = "الصديق للبصريات - متخصصون في النظارات الطبية والشمسية والعدسات اللاصقة. اختار نظارتك وشوف شكلها عليك قبل الشراء. أفضل الماركات العالمية بأسعار تنافسية.";
-const siteKeywords = 'الصديق للبصريات, Al-Sediq Optics, نظارات طبية, نظارات شمسية, عدسات لاصقة, بصريات, محل نظارات, نظارات أون لاين, عدسات طبية, eyeglasses Egypt, sunglasses, contact lenses, optical store';
+const siteTitle = 'شركة الصديق للبصريات للجملة - Al-Sediq Optics Wholesale';
+const siteDescription = "شركة الصديق للبصريات للجملة — تبعونا على صفحتنا كل يوم معاك. متخصصون في النظارات الطبية والشمسية والعدسات اللاصقة بالجملة.";
+const siteKeywords = 'الصديق للبصريات, شركة الصديق للبصريات, Al-Sediq Optics, بصريات جملة, نظارات جملة, نظارات طبية, نظارات شمسية, عدسات لاصقة, بصريات, wholesale optics Egypt, eyeglasses wholesale, optical store Egypt';
 const ogImage = `/${folderName}/logo.webp`;
 
 export const AlSediqMetaData: Metadata = {
