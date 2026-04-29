@@ -59,7 +59,7 @@ const Footer = () => {
                         <Typography variant="body2" color="text.secondary" align="center">
                             {t.forQrPrice}: <Typography
                                 color='primary'
-                                component={Link} href={"/"} target="_blank" rel="noopener noreferrer">
+                                component={Link} href={"https://qr.mountain-egy.site"} target="_blank" rel="noopener noreferrer">
                                 {t.homepage}
                             </Typography>
                         </Typography>
