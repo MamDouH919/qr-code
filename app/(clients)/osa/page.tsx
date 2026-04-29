@@ -91,11 +91,11 @@ const OSAPage = () => {
                         />
                         <Description description={data.description[language as "ar" | "en"]} />
                         {/* SOCIAL */}
-                        <SocialMediaLinks links={data.socials} />
                         <Apps
                             ios={data.apps.ios}
                             android={data.apps.android}
                         />
+                        <SocialMediaLinks links={data.socials} />
                         {/* BRANCHES (NESTED THEME) */}
                         <BranchLocations
                             branches={data.branches}

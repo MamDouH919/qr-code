@@ -1,12 +1,12 @@
 {
     "id": "osa",
     "active": true,
-    "name": "OSA-Optics",
+    "name": "OSA Optics Ai",
     "role": "Optics",
     "lastUpdated": "2026-2-1",
     "description": {
-        "ar": "اختار نظارتك وشوف شكلها عليك قبل الشراء. التطبيق بيمكّنك من تجربة النظارات الشمسية والطبية مباشرة على وشك، واختيار أفضل العدسات الطبية واللاصقة. كمان تقدر تختار أقرب دكتور وتحجز معاه بسهولة من خلال التطبيق",
-        "en": "Choose your glasses and see how they look on you before you buy. The app lets you try on sunglasses and prescription glasses directly on your face, and choose the best prescription and contact lenses. You can also select the nearest doctor and book an appointment easily through the app."
+        "ar": "Osa Optics Ai حمل التطبيق الان و استمتع بتجربة تسوق ذكية… جرب النظارة و لنسيز على وشك قبل ما تشترى 🙂‍↔️ واختار افضل العدسات الطبية الألمانية و كمان تقدر تختار اقرب دكتور و تحجز معاه بسهولة من خلال التطبي ",
+        "en": "Download the Osa Optics Ai app now and enjoy a smart shopping experience... Try on glasses virtually before you buy! Choose from the best German medical lenses and easily find and book appointments with nearby doctors through the app."
     },
     "color": "#004842",
     "countryCode": "+2",
@@ -31,6 +31,10 @@
         {
             "code": "TK",
             "link": "https://www.tiktok.com/@osa.optics?_r=1&_t=ZS-93ds3AloaAb"
+        },
+        {
+            "code": "SC",
+            "link": "https://www.snapchat.com/add/osaoptics"
         }
     ],
     "branches": [

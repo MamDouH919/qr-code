@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-    Button,
-    Stack,
     Paper,
     useTheme,
     Container,
@@ -26,8 +24,8 @@ interface SocialMediaLink {
 // TikTok Icon
 const TikTokIcon = () => (
     <svg
-        width="22"
-        height="22"
+        width="55"
+        height="55"
         viewBox="0 0 24 24"
         fill="currentColor"
     >
@@ -35,8 +33,18 @@ const TikTokIcon = () => (
     </svg>
 );
 
+// Snapchat Icon
+const SnapchatIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg"
+        width="55"
+        height="55"
+        viewBox="0 0 24 24">
+        <path d="M5.829 4.533c-.6 1.344-.363 3.752-.267 5.436-.648.359-1.48-.271-1.951-.271-.49 0-1.075.322-1.167.802-.066.346.089.85 1.201 1.289.43.17 1.453.37 1.69.928.333.784-1.71 4.403-4.918 4.931-.251.041-.43.265-.416.519.056.975 2.242 1.357 3.211 1.507.099.134.179.7.306 1.131.057.193.204.424.582.424.493 0 1.312-.38 2.738-.144 1.398.233 2.712 2.215 5.235 2.215 2.345 0 3.744-1.991 5.09-2.215.779-.129 1.448-.088 2.196.058.515.101.977.157 1.124-.349.129-.437.208-.992.305-1.123.96-.149 3.156-.53 3.211-1.505.014-.254-.165-.477-.416-.519-3.154-.52-5.259-4.128-4.918-4.931.236-.557 1.252-.755 1.69-.928.814-.321 1.222-.716 1.213-1.173-.011-.585-.715-.934-1.233-.934-.527 0-1.284.624-1.897.286.096-1.698.332-4.095-.267-5.438-1.135-2.543-3.66-3.829-6.184-3.829-2.508 0-5.014 1.268-6.158 3.833z" fill="#020202" />
+    </svg>
+);
+
 type SocialConfig = {
-    code: "FB" | "IG" | "X" | "LI" | "YT" | "TK" | "WG" | "WS" | "TG";
+    code: "FB" | "IG" | "X" | "LI" | "YT" | "TK" | "WG" | "WS" | "TG" | "SC";
     name: string;
     icon: React.ReactNode;
     gradient: string;
@@ -48,7 +56,7 @@ const SOCIAL_CONFIG: SocialConfig[] = [
         code: 'FB',
         name: 'Facebook',
         nameAr: 'فيسبوك',
-        icon: <Facebook />,
+        icon: <Facebook fontSize={"large"} />,
         gradient: 'linear-gradient(135deg, #1877F2, #0D5DBF)'
     },
     {
@@ -108,6 +116,13 @@ const SOCIAL_CONFIG: SocialConfig[] = [
         nameAr: "تيليجرام",
         icon: <Telegram />,
         gradient: "linear-gradient(135deg, #0088CC, #0088CC)"
+    },
+    {
+        code: "SC",
+        name: "Snapchat",
+        nameAr: "سنابشت",
+        icon: <SnapchatIcon />,
+        gradient: "linear-gradient(135deg, #FFFC00, #F2F200)"
     }
 ];
 
@@ -142,56 +157,74 @@ export default function SocialMediaLinks({
     return (
         <Box>
             <Container>
-                <Stack spacing={2}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
+                        gap: 3,
+                    }}
+                >
                     {availableLinks.map((social, index) => (
-                        <Button
+                        <Box
                             key={index}
                             component="a"
                             href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            endIcon={social.icon}
-                            fullWidth
                             sx={{
-                                backgroundImage: social.gradient,
-                                backgroundColor: 'transparent',
-                                color: '#fff',
-
-                                height: 64,
-                                px: 3,
-                                fontSize: '1.05rem',
-                                fontWeight: 600,
-                                textTransform: 'none',
-                                borderRadius: 999,
-
-                                justifyContent: 'space-between',
-                                boxShadow: '0 8px 24px rgba(0,0,0,0.35)',
-
-                                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
-
-                                '&:hover': {
-                                    backgroundImage: social.gradient,
-                                    transform: 'translateY(-2px)',
-                                    boxShadow: '0 12px 32px rgba(0,0,0,0.45)',
-                                },
-
-                                '&:active': {
-                                    transform: 'translateY(0)',
-                                },
-                                '& svg': {
-                                    fontSize: "25px !important",
-                                },
-
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                gap: 0.75,
+                                textDecoration: 'none',
+                                animation: `fadeInUp 0.5s ease-out ${index * 0.08}s both`,
                                 '@keyframes fadeInUp': {
-                                    from: { opacity: 0, transform: 'translateY(24px)' },
+                                    from: { opacity: 0, transform: 'translateY(20px)' },
                                     to: { opacity: 1, transform: 'translateY(0)' }
                                 }
                             }}
                         >
-                            {isArabic ? social.nameAr : social.name}
-                        </Button>
+                            <Box
+                                sx={{
+                                    width: 72,
+                                    height: 72,
+                                    borderRadius: '22px',
+                                    backgroundImage: social.gradient,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#fff',
+                                    boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+                                    transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                                    '&:hover': {
+                                        transform: 'scale(1.08)',
+                                        boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                                    },
+                                    '&:active': {
+                                        transform: 'scale(0.94)',
+                                    },
+                                    '& svg': {
+                                        fontSize: '65px !important',
+                                    },
+                                }}
+                            >
+                                {social.icon}
+                            </Box>
+                            <Box
+                                component="span"
+                                sx={{
+                                    fontSize: '0.72rem',
+                                    fontWeight: 500,
+                                    color: 'text.secondary',
+                                    textAlign: 'center',
+                                }}
+                            >
+                                {isArabic ? social.nameAr : social.name}
+                            </Box>
+                        </Box>
                     ))}
-                </Stack>
+                </Box>
             </Container>
         </Box>
     );
