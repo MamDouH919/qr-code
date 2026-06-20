@@ -113,3 +113,33 @@ const ArabClinicPage = () => {
 };
 
 export default ArabClinicPage;
+
+
+// {
+//             "branchName": {
+//                 "ar": "سرياقوس",
+//                 "en": "Seryaqous"
+//             },
+//             "numbers": [
+//                 {
+//                     "number": "+201006364547",
+//                     "type": [
+//                         "mobile"
+//                     ]
+//                 },
+//                 {
+//                     "number": "+201124666783",
+//                     "type": [
+//                         "mobile"
+//                     ]
+//                 },
+//                 {
+//                     "number": "+201202325556",
+//                     "type": [
+//                         "mobile",
+//                         "whatsApp"
+//                     ]
+//                 }
+//             ],
+//             "location": "https://maps.app.goo.gl/RNPt3Gj18zvnBtxZA?g_st=aw"
+//         },

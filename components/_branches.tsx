@@ -53,6 +53,10 @@ type Branch = {
         title: string;
         link: string;
     }[]
+    customNumbers?: {
+        title: string;
+        link: string;
+    }[]
 }
 
 const translations = {
@@ -67,6 +71,10 @@ const translations = {
         "contactUs": "تواصل معنا",
         "phoneNumbers": "أرقام الهاتف",
         "whatsappGroup": "مجموعة واتساب",
+        "approvals": "موافقات",
+        "clinics": "عيادات",
+        "group1": "جروب التجميل والليزر",
+        "group2": "الجروب العام",
     },
     en: {
         "close": "Close",
@@ -79,6 +87,10 @@ const translations = {
         "contactUs": "Contact Us",
         "phoneNumbers": "Phone Numbers",
         "whatsappGroup": "WhatsApp Group",
+        "approvals": "Approvals",
+        "clinics": "Clinics",
+        "group1": "Beauty and Laser Group",
+        "group2": "General Group",
     }
 }
 
@@ -299,7 +311,23 @@ export default function BranchLocations({
                                                         rel="noopener noreferrer"
                                                         startIcon={<WhatsApp />}
                                                     >
-                                                        {group.title}
+                                                        {translationsData[group.title as keyof typeof translationsData]}
+                                                    </Button>
+                                                </Grid>
+                                            ))}
+                                            {branch.customNumbers?.map((number, gIdx) => (
+                                                <Grid size={{ xs: 12 }} key={gIdx}>
+                                                    <Button
+                                                        fullWidth
+                                                        variant="contained"
+                                                        color='info'
+                                                        component="a"
+                                                        href={number.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        startIcon={<Phone />}
+                                                    >
+                                                        {translationsData[number.title as keyof typeof translationsData]}
                                                     </Button>
                                                 </Grid>
                                             ))}

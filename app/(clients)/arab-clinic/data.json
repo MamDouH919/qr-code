@@ -43,6 +43,13 @@
                         "mobile",
                         "whatsApp"
                     ]
+                },
+                {
+                    "number": "+201111827739",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
                 }
             ],
             "location": "https://www.google.com/maps?q=30.311933517456055,31.313459396362305&z=17&hl=en"
@@ -54,11 +61,28 @@
             },
             "numbers": [
                 {
-                    "number": "+201022683220",
+                    "number": "+201111826807",
                     "type": [
                         "mobile",
                         "whatsApp"
                     ]
+                },
+                {
+                    "number": "+201111826944",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "customNumbers": [
+                {
+                    "title": "approvals",
+                    "link": "tel:+201156911179"
+                },
+                {
+                    "title": "clinics",
+                    "link": "tel:+201111825772"
                 }
             ],
             "location": "https://www.google.com/maps?q=%D9%85%D8%B1%D9%83%D8%B2+%D8%B9%D8%B1%D8%A8+%D9%83%D9%84%D9%8A%D9%86%D9%83+Arab+Cinic+%D8%AF.%D8%A3%D8%AD%D9%85%D8%AF+%D9%86%D8%A7%D8%B5%D8%B1%D8%8C+%D8%A3%D8%A8%D9%88+%D8%B2%D8%B9%D8%A8%D9%84%D8%8C+%D8%A7%D9%84%D8%AE%D8%A7%D9%86%D9%83%D8%A9%D8%8C+%D8%A3%D8%A8%D9%88%D8%B2%D8%B9%D8%A8%D9%84,+Al-Qalyubia+Governorate&ftid=0x1458132c423f2e4d:0xd769a6a26e7837c4&entry=gps&lucs=,94207360,47071704,47069508,47084304,94206604&g_st=iw"
@@ -70,7 +94,28 @@
             },
             "numbers": [
                 {
-                    "number": "+201000380234",
+                    "number": "+201105998455",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                },
+                {
+                    "number": "+201105998466",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                },
+                {
+                    "number": "+201105998577",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                },
+                {
+                    "number": "+201105998588",
                     "type": [
                         "mobile",
                         "whatsApp"
@@ -91,6 +136,20 @@
                         "mobile",
                         "whatsApp"
                     ]
+                },
+                {
+                    "number": "+201060093699",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                },
+                {
+                    "number": "+201102622249",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
                 }
             ],
             "location": "https://www.google.com/maps/place/P7C4%2B255+Arab+clinic+-+%D8%A3%D8%B1%D8%A7%D8%A8+%D9%83%D9%84%D9%8A%D9%86%D9%83,+El-Gaish,+Madinet+Mit+Ghamr+(Include+Daqados),+Mit+Ghamr,+Dakahlia+Governorate+7511324%E2%80%AD/data=!4m2!3m1!1s0x14f7c14c5374a34f:0xee7c1acbd66cfd01?utm_source=mstt_1&entry=gps&lucs=,94206287,47075915&g_ep=CAESCjExLjExMi4xMDIYACDXggMqEiw5NDIwNjI4Nyw0NzA3NTkxNUICRUc%3D"
@@ -102,14 +161,7 @@
             },
             "numbers": [
                 {
-                    "number": "+201009960086",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                },
-                {
-                    "number": "+201144239659",
+                    "number": "+01144239659",
                     "type": [
                         "mobile",
                         "whatsApp"
@@ -120,60 +172,68 @@
         },
         {
             "branchName": {
-                "ar": "سرياقوس",
-                "en": "Seryaqous"
-            },
-            "numbers": [
-                {
-                    "number": "+201006364547",
-                    "type": [
-                        "mobile"
-                    ]
-                },
-                {
-                    "number": "+201124666783",
-                    "type": [
-                        "mobile"
-                    ]
-                },
-                {
-                    "number": "+201202325556",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                }
-            ],
-            "location": "https://maps.app.goo.gl/RNPt3Gj18zvnBtxZA?g_st=aw"
-        },
-        {
-            "branchName": {
                 "ar": "ناهيا",
                 "en": "Nahya"
             },
             "numbers": [
                 {
-                    "number": "+201555573170",
+                    "number": "+201111829178",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "whatsAppGroup": [
+                {
+                    "title": "group1",
+                    "link": "https://chat.whatsapp.com/DeDGGo0tV4L3l5tK5bPUD5?mode=wwc"
+                },
+                {
+                    "title": "group2",
+                    "link": "https://chat.whatsapp.com/CpCeivPzBLRKNXqNS6UmXr"
+                }
+            ]
+        },
+        {
+            "branchName": {
+                "ar": "الخانكة",
+                "en": "Al-Khankah"
+            },
+            "numbers": [
+                {
+                    "number": "+20244693799",
+                    "type": [
+                        "mobile"
+                    ]
+                },
+                {
+                    "number": "+201102666154",
                     "type": [
                         "mobile",
                         "whatsApp"
                     ]
                 },
                 {
-                    "number": "+201555573171",
+                    "number": "+201102666486",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ]
+        },
+        {
+            "branchName": {
+                "ar": "ام القرى",
+                "en": "Am Al-Qari"
+            },
+            "numbers": [
+                {
+                    "number": "+201155539719",
                     "type": [
                         "mobile"
                     ]
-                }
-            ],
-            "whatsAppGroup": [
-                {
-                    "title": "جروب التجميل والليزر",
-                    "link": "https://chat.whatsapp.com/DeDGGo0tV4L3l5tK5bPUD5?mode=wwc"
-                },
-                {
-                    "title": "الجروب العام",
-                    "link": "https://chat.whatsapp.com/CpCeivPzBLRKNXqNS6UmXr"
                 }
             ]
         }
