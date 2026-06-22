@@ -33,29 +33,6 @@
     "branches": [
         {
             "branchName": {
-                "ar": "شبين",
-                "en": "Shaybeen"
-            },
-            "numbers": [
-                {
-                    "number": "+201550141552",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                },
-                {
-                    "number": "+201111827739",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                }
-            ],
-            "location": "https://www.google.com/maps?q=30.311933517456055,31.313459396362305&z=17&hl=en"
-        },
-        {
-            "branchName": {
                 "ar": "ابوزعبل",
                 "en": "Abu Zabbal"
             },
@@ -126,6 +103,57 @@
         },
         {
             "branchName": {
+                "ar": "الخانكة",
+                "en": "Al-Khankah"
+            },
+            "numbers": [
+                {
+                    "number": "+20244693799",
+                    "type": [
+                        "mobile"
+                    ]
+                },
+                {
+                    "number": "+201102666154",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                },
+                {
+                    "number": "+201102666486",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ]
+        },
+        {
+            "branchName": {
+                "ar": "شبين القناطر",
+                "en": "Shaybeen Al-Qanatar"
+            },
+            "numbers": [
+                {
+                    "number": "+201550141552",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                },
+                {
+                    "number": "+201111827739",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "location": "https://www.google.com/maps?q=30.311933517456055,31.313459396362305&z=17&hl=en"
+        },
+        {
+            "branchName": {
                 "ar": "ميت غمر",
                 "en": "Mit Ghamr"
             },
@@ -172,6 +200,20 @@
         },
         {
             "branchName": {
+                "ar": "ام القرى",
+                "en": "Am Al-Qari"
+            },
+            "numbers": [
+                {
+                    "number": "+201155539719",
+                    "type": [
+                        "mobile"
+                    ]
+                }
+            ]
+        },
+        {
+            "branchName": {
                 "ar": "ناهيا",
                 "en": "Nahya"
             },
@@ -194,55 +236,13 @@
                     "link": "https://chat.whatsapp.com/CpCeivPzBLRKNXqNS6UmXr"
                 }
             ]
-        },
-        {
-            "branchName": {
-                "ar": "الخانكة",
-                "en": "Al-Khankah"
-            },
-            "numbers": [
-                {
-                    "number": "+20244693799",
-                    "type": [
-                        "mobile"
-                    ]
-                },
-                {
-                    "number": "+201102666154",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                },
-                {
-                    "number": "+201102666486",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                }
-            ]
-        },
-        {
-            "branchName": {
-                "ar": "ام القرى",
-                "en": "Am Al-Qari"
-            },
-            "numbers": [
-                {
-                    "number": "+201155539719",
-                    "type": [
-                        "mobile"
-                    ]
-                }
-            ]
         }
     ],
     "dentalBranch": [
         {
             "branchName": {
-                "ar": "عيادة الأسنان",
-                "en": "Dental Clinic"
+                "ar": "العاشر من رمضان",
+                "en": "Al-Ashr Mn Al-Ramdan"
             },
             "numbers": [
                 {

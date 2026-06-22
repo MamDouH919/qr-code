@@ -3,9 +3,11 @@
 import { useLayoutEffect, useMemo, useState } from "react";
 import { CacheProvider } from "@emotion/react";
 import {
+    Box,
     CssBaseline,
     Stack,
     ThemeProvider,
+    Typography,
 } from "@mui/material";
 
 import createEmotionCache from "@/lib/create-emotion-cache";
@@ -30,6 +32,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 /* ---------------- page component ---------------- */
 
 const folderName = "arab-clinic";
+const dentalName = {
+    ar: "عيادة الأسنان",
+    en: "Dental Clinic"
+}
 
 const ArabClinicPage = () => {
     const [ready, setReady] = useState(false);
@@ -94,16 +100,75 @@ const ArabClinicPage = () => {
                         <AutoReplyWhatsapp language={language} number={data.autoReplyWhatsapp} />
                         <SocialMediaLinks links={data.socials} />
 
-                        <BranchLocations
-                            branches={data.dentalBranch}
-                            splitCode={data.countryCode}
-                        />
-
                         {/* BRANCHES (NESTED THEME) */}
                         <BranchLocations
                             branches={data.branches}
                             splitCode={data.countryCode}
                         />
+
+                        <Box
+                            sx={{
+                                mt: 4,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                gap: 2,
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                    flex: 1,
+                                    maxWidth: 80,
+                                    height: "2px",
+                                    background: (theme) =>
+                                        `linear-gradient(to right, transparent, ${theme.palette.primary.main})`,
+                                }}
+                            />
+                            <Typography
+                                variant="h4"
+                                gutterBottom={false}
+                                color="primary"
+                                textAlign="center"
+                                sx={{
+                                    fontWeight: 700,
+                                    letterSpacing: "0.04em",
+                                    position: "relative",
+                                    px: 1,
+                                    background: (theme) =>
+                                        `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                    "&::after": {
+                                        content: '""',
+                                        position: "absolute",
+                                        left: "50%",
+                                        bottom: -8,
+                                        transform: "translateX(-50%)",
+                                        width: 36,
+                                        height: 3,
+                                        borderRadius: 3,
+                                        background: (theme) => theme.palette.primary.main,
+                                    },
+                                }}
+                            >
+                                {dentalName[language as "ar" | "en"]}
+                            </Typography>
+                            <Box
+                                sx={{
+                                    flex: 1,
+                                    maxWidth: 80,
+                                    height: "2px",
+                                    background: (theme) =>
+                                        `linear-gradient(to left, transparent, ${theme.palette.primary.main})`,
+                                }}
+                            />
+                        </Box>
+                        <BranchLocations
+                            branches={data.dentalBranch}
+                            splitCode={data.countryCode}
+                        />
+
                         <Footer />
                     </Stack>
                 </Stack>
