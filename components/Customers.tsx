@@ -151,6 +151,11 @@ export const ourClients = [
         id: "alsediq",
         name: "Al-Sediq Optics",
         src: "/alsediq/logo.webp",
+    },
+    {
+        id: "pizza-laveraa",
+        name: "Pizza Laveraa",
+        src: "/pizza-laveraa/logo.webp",
     }
 ];
 

@@ -1,0 +1,40 @@
+{
+    "id": "pizza-laveraa",
+    "active": true,
+    "name": "Pizza Laveraa",
+    "role": "Pizza Restaurant",
+    "color": "#9b1417",
+    "secondColor": "#c01a1a",
+    "countryCode": "+2",
+    "multiLanguage": false,
+    "lastUpdated": "2026-7-9",
+    "description": "مطعم بيتزا إيطالي لكل انواع البيتزا والباستا 🍜🍕👌",
+    "socials": [
+        {
+            "code": "FB",
+            "link": "https://www.facebook.com/profile.php?id=100063840642302"
+        }
+    ],
+    "branches": [
+        {
+            "branchName": {
+                "ar": "فرع بنها - المنشية",
+                "en": ""
+            },
+            "numbers": [
+                {
+                    "number": "+201120158161",
+                    "type": [
+                        "mobile",
+                        "whatsApp"
+                    ]
+                }
+            ],
+            "location": "https://maps.app.goo.gl/kTYZReezKcVHdaht9"
+        }
+    ],
+    "menu1": [
+        "/menu1.webp",
+        "/menu2.webp"
+    ]
+}
