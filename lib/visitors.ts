@@ -7,7 +7,13 @@
  */
 
 /** Route segments under /app that are not client pages. */
-const NON_CLIENT_SEGMENTS = new Set(["api", "mountain", "_next", "favicon.ico"]);
+const NON_CLIENT_SEGMENTS = new Set([
+    "api",
+    "mountain",
+    "customers",
+    "_next",
+    "favicon.ico",
+]);
 
 /** Custom domains that serve a single client page at the root path. */
 export const DOMAIN_TO_SLUG: Record<string, string> = {
@@ -49,6 +55,24 @@ export function currentDay(): string {
         month: "2-digit",
         day: "2-digit",
     }).format(new Date());
+}
+
+/**
+ * Shift a YYYY-MM-DD day key by whole days.
+ *
+ * The keys are plain calendar dates, so the arithmetic is done in UTC — that
+ * keeps it free of any offset shifting the result onto the wrong day.
+ */
+export function shiftDay(day: string, offset: number): string {
+    const [year, month, date] = day.split("-").map(Number);
+    return new Date(Date.UTC(year, month - 1, date + offset))
+        .toISOString()
+        .slice(0, 10);
+}
+
+/** The last `count` day keys, newest first, ending at `day`. */
+export function recentDays(day: string, count: number): string[] {
+    return Array.from({ length: count }, (_, index) => shiftDay(day, -index));
 }
 
 export const VISITOR_COOKIE = "qr_vid";
