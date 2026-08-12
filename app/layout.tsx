@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { headers } from "next/headers"
+import VisitorCounter from "@/components/VisitorCounter"
 import ArabClinicLayout from "@/domains/ArabClinic"
 import { ArabClinicMetaData } from "./(clients)/arab-clinic/layout"
 import DrCoffeeLayout from "@/domains/DrCoffee"
@@ -304,6 +305,7 @@ export default async function RootLayout({
         <Suspense fallback={null}>
           {children}
         </Suspense>
+        <VisitorCounter />
         <Analytics />
       </body>
     </html>

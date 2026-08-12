@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
+import VisitorCounter from "@/components/VisitorCounter"
 import { Suspense } from "react"
 import Script from "next/script"
 import "../app/globals.css"
@@ -30,6 +31,7 @@ export default async function OSALayout() {
                 <Suspense fallback={null}>
                     <OSAPage />
                 </Suspense>
+                <VisitorCounter />
                 <Analytics />
             </body>
         </html>

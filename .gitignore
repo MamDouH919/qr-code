@@ -19,6 +19,10 @@ yarn-error.log*
 # env files
 .env*
 
+# visitor counts (written at runtime)
+/data/visitors.json
+/data/visitors.json.*.tmp
+
 # vercel
 .vercel
 
