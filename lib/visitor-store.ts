@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 
-import { SEEN_DAYS_KEPT, HISTORY_DAYS_KEPT } from "./visitors";
+import { HISTORY_DAYS_KEPT } from "./visitors";
 
 /**
  * Visitor counts kept in a plain JSON file.
@@ -11,19 +11,20 @@ import { SEEN_DAYS_KEPT, HISTORY_DAYS_KEPT } from "./visitors";
  *   "pizza-pepo": {
  *     "total": 42,
  *     "days": { "2026-08-12": 5 },
- *     "seen": { "2026-08-12": ["<visitor-id>", ...] }
+ *     "visitors": ["<visitor-id>", ...]
  *   }
  * }
  *
- * `seen` is what makes visits unique: a browser already listed under today's
- * date is not counted again. Old entries are pruned on every write so the file
- * stays small.
+ * `visitors` is what makes visits unique: a browser already on the list is
+ * never counted again, so the list is kept in full for as long as the client
+ * exists. `days` records how many first-time visitors arrived on each day and
+ * is trimmed on every write.
  */
 
 export type ClientStats = {
     total: number;
     days: Record<string, number>;
-    seen: Record<string, string[]>;
+    visitors: string[];
 };
 
 export type Store = Record<string, ClientStats>;
@@ -44,11 +45,43 @@ function withLock<T>(task: () => Promise<T>): Promise<T> {
     return result;
 }
 
+/**
+ * Bring one client's entry up to the current shape.
+ *
+ * Files written before visitors were counted once-ever kept the ids per day
+ * under `seen`; those ids are folded into the flat list so returning visitors
+ * from back then are not counted a second time. `total` is left as it was —
+ * it is the running count, and the old per-day rule really did happen.
+ */
+function normalize(raw: unknown): ClientStats {
+    const entry = (raw ?? {}) as Partial<ClientStats> & {
+        seen?: Record<string, unknown>;
+    };
+
+    const visitors = Array.isArray(entry.visitors) ? [...entry.visitors] : [];
+    for (const ids of Object.values(entry.seen ?? {})) {
+        if (!Array.isArray(ids)) continue;
+        for (const id of ids) {
+            if (typeof id === "string" && !visitors.includes(id)) visitors.push(id);
+        }
+    }
+
+    return {
+        total: typeof entry.total === "number" ? entry.total : visitors.length,
+        days: entry.days && typeof entry.days === "object" ? { ...entry.days } : {},
+        visitors,
+    };
+}
+
 async function readStore(): Promise<Store> {
     try {
         const raw = await fs.readFile(STORE_PATH, "utf8");
         const parsed = JSON.parse(raw);
-        return parsed && typeof parsed === "object" ? (parsed as Store) : {};
+        if (!parsed || typeof parsed !== "object") return {};
+
+        return Object.fromEntries(
+            Object.entries(parsed).map(([slug, stats]) => [slug, normalize(stats)])
+        );
     } catch (error) {
         const code = (error as NodeJS.ErrnoException).code;
         // A missing file just means nobody has visited yet.
@@ -67,13 +100,8 @@ async function writeStore(store: Store): Promise<void> {
     await fs.rename(tempPath, STORE_PATH);
 }
 
-/** Drop the visitor-id lists and daily totals we no longer need. */
+/** Drop the daily totals we no longer report on. */
 function prune(stats: ClientStats): void {
-    const seenDays = Object.keys(stats.seen).sort();
-    for (const day of seenDays.slice(0, -SEEN_DAYS_KEPT)) {
-        delete stats.seen[day];
-    }
-
     const historyDays = Object.keys(stats.days).sort();
     for (const day of historyDays.slice(0, -HISTORY_DAYS_KEPT)) {
         delete stats.days[day];
@@ -81,11 +109,11 @@ function prune(stats: ClientStats): void {
 }
 
 function emptyStats(): ClientStats {
-    return { total: 0, days: {}, seen: {} };
+    return { total: 0, days: {}, visitors: [] };
 }
 
 /**
- * Count the visit unless this browser was already counted today.
+ * Count the visit unless this browser has been counted before.
  * Returns the running total either way, so the badge always has a number.
  */
 export function recordVisit(
@@ -97,13 +125,11 @@ export function recordVisit(
         const store = await readStore();
         const stats = store[slug] ?? emptyStats();
 
-        const seenToday = stats.seen[day] ?? [];
-        if (seenToday.includes(visitorId)) {
+        if (stats.visitors.includes(visitorId)) {
             return { count: stats.total, counted: false };
         }
 
-        seenToday.push(visitorId);
-        stats.seen[day] = seenToday;
+        stats.visitors.push(visitorId);
         stats.days[day] = (stats.days[day] ?? 0) + 1;
         stats.total += 1;
         prune(stats);

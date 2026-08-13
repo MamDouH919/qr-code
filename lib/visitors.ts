@@ -1,9 +1,14 @@
 /**
  * Visitor counting rules, shared by the API route and the client badge.
  *
- * A "visitor" is one browser, counted once per calendar day (Cairo time) per
- * client page. Someone who scans the QR three times in an afternoon counts
- * once; if they come back tomorrow they count again.
+ * A "visitor" is one browser, counted once per client page and never again.
+ * Someone who scans the QR three times in an afternoon counts once, and so
+ * does the same person coming back next month. The count is therefore "how
+ * many different people have seen this page", not how many times it was
+ * opened.
+ *
+ * The identity is a cookie, so it is per browser: clearing cookies, private
+ * windows or a second phone all read as a new visitor.
  */
 
 /** Route segments under /app that are not client pages. */
@@ -76,9 +81,8 @@ export function recentDays(day: string, count: number): string[] {
 }
 
 export const VISITOR_COOKIE = "qr_vid";
-export const VISITOR_COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
+/** Browsers cap cookie lifetime at around 400 days, so this is the practical max. */
+export const VISITOR_COOKIE_MAX_AGE = 60 * 60 * 24 * 400;
 
-/** Days of visitor-id lists to keep. Two covers any timezone edge. */
-export const SEEN_DAYS_KEPT = 2;
 /** Days of per-day totals to keep, for reporting. */
 export const HISTORY_DAYS_KEPT = 90;

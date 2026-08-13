@@ -218,14 +218,14 @@ const CustomersDashboard = ({ customers, day }: Props) => {
                             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                                 <Summary
                                     icon={<TrendingUp color="primary" />}
-                                    label="Last 7 days"
+                                    label="New in 7 days"
                                     value={format(totals.week)}
                                 />
                             </Grid>
                             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                                 <Summary
                                     icon={<Today color="primary" />}
-                                    label={`Today (${day})`}
+                                    label={`New today (${day})`}
                                     value={format(totals.today)}
                                 />
                             </Grid>
@@ -349,12 +349,12 @@ const CustomersDashboard = ({ customers, day }: Props) => {
                                                 <Chip
                                                     size="small"
                                                     variant="outlined"
-                                                    label={`${format(customer.week)} this week`}
+                                                    label={`${format(customer.week)} new this week`}
                                                 />
                                                 <Chip
                                                     size="small"
                                                     variant="outlined"
-                                                    label={`${format(customer.today)} today`}
+                                                    label={`${format(customer.today)} new today`}
                                                 />
                                             </Stack>
 

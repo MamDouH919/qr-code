@@ -33,23 +33,23 @@ export async function POST(request: NextRequest) {
 
     const existingId = request.cookies.get(VISITOR_COOKIE)?.value;
 
-    // A year-long cookie is the identity. It has to be minted before we record
-    // the visit, otherwise the first visit is stored under one id and the
-    // second under the cookie's id — counting the same person twice.
+    // The cookie is the identity. It has to be minted before we record the
+    // visit, otherwise the first visit is stored under one id and the second
+    // under the cookie's id — counting the same person twice.
     const visitorId = existingId ?? randomUUID();
 
     const { count, counted } = await recordVisit(slug, visitorId, currentDay());
     const response = NextResponse.json({ count, counted });
 
-    if (!existingId) {
-        response.cookies.set(VISITOR_COOKIE, visitorId, {
-            httpOnly: true,
-            sameSite: "lax",
-            secure: process.env.NODE_ENV === "production",
-            path: "/",
-            maxAge: VISITOR_COOKIE_MAX_AGE,
-        });
-    }
+    // Re-sent on every visit so the expiry rolls forward. A visitor is only
+    // ever counted once, so losing the cookie is what makes them count twice.
+    response.cookies.set(VISITOR_COOKIE, visitorId, {
+        httpOnly: true,
+        sameSite: "lax",
+        secure: process.env.NODE_ENV === "production",
+        path: "/",
+        maxAge: VISITOR_COOKIE_MAX_AGE,
+    });
 
     return response;
 }

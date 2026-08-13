@@ -6,25 +6,19 @@ import { usePathname } from "next/navigation";
 import { resolveSlug } from "@/lib/visitors";
 
 /**
- * One request per slug per tab, shared by every mount.
+ * Requests in flight right now, one per slug.
  *
- * This lives outside the component on purpose: React StrictMode mounts effects
- * twice in development, and a sessionStorage check alone doesn't help because
- * nothing is written until the first response comes back — so every mount
- * would fire its own request. Holding the promise here means later mounts
- * await the first one instead.
+ * Whether a visit counts is decided on the server — the visitor cookie means
+ * the same browser is only ever counted once. So the only thing to guard here
+ * is *concurrent* requests: React StrictMode mounts effects twice in
+ * development, and on a first visit there is no cookie yet, so two overlapping
+ * requests would mint two ids and count twice. Later mounts await the first
+ * request instead, and the entry is dropped once it settles so a fresh mount
+ * always asks for the current number.
  */
 const inFlight = new Map<string, Promise<number | null>>();
 
 function countVisit(slug: string): Promise<number | null> {
-    const cacheKey = `qr_visit:${slug}`;
-
-    const cached = sessionStorage.getItem(cacheKey);
-    if (cached !== null) return Promise.resolve(Number(cached));
-
-    console.log(cached);
-    
-
     const pending = inFlight.get(slug);
     if (pending) return pending;
 
@@ -34,13 +28,11 @@ function countVisit(slug: string): Promise<number | null> {
         body: JSON.stringify({ slug }),
     })
         .then((response) => (response.ok ? response.json() : null))
-        .then((data) => {
-            if (!data || typeof data.count !== "number") return null;
-            // Written even if the component unmounted, so a remount reuses it.
-            sessionStorage.setItem(cacheKey, String(data.count));
-            return data.count as number;
-        })
-        .catch(() => null /* counting is decoration — never break the page */);
+        .then((data) => (data && typeof data.count === "number" ? (data.count as number) : null))
+        .catch(() => null /* counting is decoration — never break the page */)
+        .finally(() => {
+            inFlight.delete(slug);
+        });
 
     inFlight.set(slug, request);
     return request;
@@ -74,9 +66,6 @@ const VisitorCounter = () => {
             cancelled = true;
         };
     }, [pathname]);
-
-    console.log(count);
-    
 
     if (count === null) return null;
 
