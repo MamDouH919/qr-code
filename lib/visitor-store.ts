@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 
-import { HISTORY_DAYS_KEPT } from "./visitors";
+import { SEEN_DAYS_KEPT, HISTORY_DAYS_KEPT } from "./visitors";
 
 /**
  * Visitor counts kept in a plain JSON file.
@@ -11,20 +11,19 @@ import { HISTORY_DAYS_KEPT } from "./visitors";
  *   "pizza-pepo": {
  *     "total": 42,
  *     "days": { "2026-08-12": 5 },
- *     "visitors": ["<visitor-id>", ...]
+ *     "seen": { "2026-08-12": ["<visitor-id>", ...] }
  *   }
  * }
  *
- * `visitors` is what makes visits unique: a browser already on the list is
- * never counted again, so the list is kept in full for as long as the client
- * exists. `days` records how many first-time visitors arrived on each day and
- * is trimmed on every write.
+ * `seen` is what makes visits unique: a browser already listed under today's
+ * date is not counted again today. Only the last couple of days are kept, so
+ * the same browser tomorrow is a fresh view and the file stays small.
  */
 
 export type ClientStats = {
     total: number;
     days: Record<string, number>;
-    visitors: string[];
+    seen: Record<string, string[]>;
 };
 
 export type Store = Record<string, ClientStats>;
@@ -48,28 +47,25 @@ function withLock<T>(task: () => Promise<T>): Promise<T> {
 /**
  * Bring one client's entry up to the current shape.
  *
- * Files written before visitors were counted once-ever kept the ids per day
- * under `seen`; those ids are folded into the flat list so returning visitors
- * from back then are not counted a second time. `total` is left as it was —
- * it is the running count, and the old per-day rule really did happen.
+ * A file written while visitors were counted once-ever holds a flat `visitors`
+ * list with no dates attached. There is no day to file those ids under, so
+ * they are dropped: everyone gets one view today, which is the rule now.
+ * `total` is left as it was — it is the running count.
  */
 function normalize(raw: unknown): ClientStats {
-    const entry = (raw ?? {}) as Partial<ClientStats> & {
-        seen?: Record<string, unknown>;
-    };
+    const entry = (raw ?? {}) as Partial<ClientStats>;
 
-    const visitors = Array.isArray(entry.visitors) ? [...entry.visitors] : [];
-    for (const ids of Object.values(entry.seen ?? {})) {
-        if (!Array.isArray(ids)) continue;
-        for (const id of ids) {
-            if (typeof id === "string" && !visitors.includes(id)) visitors.push(id);
+    const seen: Record<string, string[]> = {};
+    for (const [day, ids] of Object.entries(entry.seen ?? {})) {
+        if (Array.isArray(ids)) {
+            seen[day] = ids.filter((id): id is string => typeof id === "string");
         }
     }
 
     return {
-        total: typeof entry.total === "number" ? entry.total : visitors.length,
+        total: typeof entry.total === "number" ? entry.total : 0,
         days: entry.days && typeof entry.days === "object" ? { ...entry.days } : {},
-        visitors,
+        seen,
     };
 }
 
@@ -100,8 +96,13 @@ async function writeStore(store: Store): Promise<void> {
     await fs.rename(tempPath, STORE_PATH);
 }
 
-/** Drop the daily totals we no longer report on. */
+/** Drop the visitor-id lists and daily totals we no longer need. */
 function prune(stats: ClientStats): void {
+    const seenDays = Object.keys(stats.seen).sort();
+    for (const day of seenDays.slice(0, -SEEN_DAYS_KEPT)) {
+        delete stats.seen[day];
+    }
+
     const historyDays = Object.keys(stats.days).sort();
     for (const day of historyDays.slice(0, -HISTORY_DAYS_KEPT)) {
         delete stats.days[day];
@@ -109,11 +110,11 @@ function prune(stats: ClientStats): void {
 }
 
 function emptyStats(): ClientStats {
-    return { total: 0, days: {}, visitors: [] };
+    return { total: 0, days: {}, seen: {} };
 }
 
 /**
- * Count the visit unless this browser has been counted before.
+ * Count the visit unless this browser was already counted today.
  * Returns the running total either way, so the badge always has a number.
  */
 export function recordVisit(
@@ -125,11 +126,13 @@ export function recordVisit(
         const store = await readStore();
         const stats = store[slug] ?? emptyStats();
 
-        if (stats.visitors.includes(visitorId)) {
+        const seenToday = stats.seen[day] ?? [];
+        if (seenToday.includes(visitorId)) {
             return { count: stats.total, counted: false };
         }
 
-        stats.visitors.push(visitorId);
+        seenToday.push(visitorId);
+        stats.seen[day] = seenToday;
         stats.days[day] = (stats.days[day] ?? 0) + 1;
         stats.total += 1;
         prune(stats);

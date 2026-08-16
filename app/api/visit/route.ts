@@ -41,8 +41,8 @@ export async function POST(request: NextRequest) {
     const { count, counted } = await recordVisit(slug, visitorId, currentDay());
     const response = NextResponse.json({ count, counted });
 
-    // Re-sent on every visit so the expiry rolls forward. A visitor is only
-    // ever counted once, so losing the cookie is what makes them count twice.
+    // Re-sent on every visit so the expiry rolls forward. Losing the cookie is
+    // what makes the same person count twice in a day.
     response.cookies.set(VISITOR_COOKIE, visitorId, {
         httpOnly: true,
         sameSite: "lax",
