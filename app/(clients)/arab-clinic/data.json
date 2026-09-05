@@ -103,34 +103,6 @@
         },
         {
             "branchName": {
-                "ar": "الخانكة",
-                "en": "Al-Khankah"
-            },
-            "numbers": [
-                {
-                    "number": "+20244693799",
-                    "type": [
-                        "mobile"
-                    ]
-                },
-                {
-                    "number": "+201102666154",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                },
-                {
-                    "number": "+201102666486",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                }
-            ]
-        },
-        {
-            "branchName": {
                 "ar": "شبين القناطر",
                 "en": "Shaybeen Al-Qanatar"
             },
@@ -151,36 +123,6 @@
                 }
             ],
             "location": "https://www.google.com/maps?q=30.311933517456055,31.313459396362305&z=17&hl=en"
-        },
-        {
-            "branchName": {
-                "ar": "ميت غمر",
-                "en": "Mit Ghamr"
-            },
-            "numbers": [
-                {
-                    "number": "+201060094332",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                },
-                {
-                    "number": "+201060093699",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                },
-                {
-                    "number": "+201102622249",
-                    "type": [
-                        "mobile",
-                        "whatsApp"
-                    ]
-                }
-            ],
-            "location": "https://www.google.com/maps/place/P7C4%2B255+Arab+clinic+-+%D8%A3%D8%B1%D8%A7%D8%A8+%D9%83%D9%84%D9%8A%D9%86%D9%83,+El-Gaish,+Madinet+Mit+Ghamr+(Include+Daqados),+Mit+Ghamr,+Dakahlia+Governorate+7511324%E2%80%AD/data=!4m2!3m1!1s0x14f7c14c5374a34f:0xee7c1acbd66cfd01?utm_source=mstt_1&entry=gps&lucs=,94206287,47075915&g_ep=CAESCjExLjExMi4xMDIYACDXggMqEiw5NDIwNjI4Nyw0NzA3NTkxNUICRUc%3D"
         },
         {
             "branchName": {
