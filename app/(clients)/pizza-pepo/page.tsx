@@ -21,6 +21,7 @@ import PepoGallery from "@/components/PepoGallery";
 import SaveContact from "@/components/AddToContact";
 
 import Description from "@/components/Description";
+import Ad from "@/components/Ad";
 
 /* ---------------- page component ---------------- */
 const folderName = "pizza-pepo";
@@ -101,6 +102,13 @@ const Page = () => {
                                 ]
                             }
                             id={data.id}
+                        />
+                        <Ad
+                            title="Bar Mousa"
+                            ctaText="يمكنك الطلب من هنا"
+                            description="فرع الاستاد بعد التجديد بقى جاهز وبشكل جديد "
+                            ctaLink="https://qr.mountain-egy.site/bar-mousa"
+                            image="https://pub-3fb553d8be10417581d65b209c8cd8db.r2.dev/Ads-images/Gemini_Generated_Image_pw8axipw8axipw8a.jpeg"
                         />
                         {/* BRANCHES (NESTED THEME) */}
                         <BranchLocations
