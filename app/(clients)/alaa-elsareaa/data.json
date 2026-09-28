@@ -1,0 +1,24 @@
+{
+    "id": "osa",
+    "active": true,
+    "name": "Alaa Elsareaa",
+    "role": "Car Rental",
+    "lastUpdated": "2026-10-1",
+    "description": {
+        "ar": "علي السريع السريعة لتأجير السيارات مع سائق… احجز سيارتك في ثواني، اختار السيارة اللي تناسبك واستمتع برحلة مريحة وآمنة مع سائقين محترفين على مدار الساعة",
+        "en": "Alaa Elsareaa Car Rental with driver — book your ride in seconds. Choose the car that suits you and enjoy a safe, comfortable trip with professional drivers available around the clock."
+    },
+    "color": "#a51010",
+    "countryCode": "+2",
+    "defaultPhone": "",
+    "apps":{
+        "ios": "https://apps.apple.com/eg/app/3ala-el-sare3/id6758057778",
+        "android": "https://play.google.com/store/apps/details?id=com.alaaelsare3.app"
+    },
+    "socials": [
+        
+    ],
+    "branches": [
+        
+    ]
+}

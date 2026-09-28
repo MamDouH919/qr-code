@@ -96,4 +96,9 @@ export const ourClients: Client[] = [
         name: "Pizza Laveraa",
         src: "/pizza-laveraa/logo.webp",
     },
+    {
+        id: "alaa-elsareaa",
+        name: "Alaa Elsareaa",
+        src: "/alaa-elsareaa/logo.webp",
+    },
 ];
