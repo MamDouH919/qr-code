@@ -2,18 +2,18 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-const siteName = 'OSA';
-const siteTitle = 'OSA - متجر النظارات والعدسات اللاصقة';
-const siteDescription = "OSA هو متجرك الإلكتروني الأول لبيع النظارات الطبية والشمسية والعدسات اللاصقة في مصر. نقدم أفضل الماركات العالمية بأسعار تنافسية مع خدمة توصيل سريعة لجميع المحافظات. تسوق الآن واحصل على أفضل العروض على النظارات والعدسات.";
-const siteKeywords = 'OSA, نظارات طبية, نظارات شمسية, عدسات لاصقة, متجر نظارات مصر, نظارات أون لاين, عدسات طبية, نظارات رجالي, نظارات حريمي, eyeglasses Egypt, sunglasses, contact lenses, optical store, OSA Egypt';
-const ogImage = `/osa/logo.webp`;
+const siteName = 'Alaa Elsareaa';
+const siteTitle = 'علي السريع السريع - تأجير سيارات مع سائق';
+const siteDescription = "علي السريع السريع لتأجير السيارات مع سائق… احجز سيارتك في ثواني، اختار السيارة اللي تناسبك واستمتع برحلة مريحة وآمنة مع سائقين محترفين على مدار الساعة";
+const siteKeywords = 'علي السريع السريع, تأجير سيارات, تأجير سيارات مع سائق, سيارات بسائق مصر, حجز سيارة, Alaa Elsareaa, car rental with driver, Egypt car rental';
+const ogImage = `/alaa-elsareaa/logo.webp`;
 
-export const OSAMetaData: Metadata = {
+export const AlaaElsareaaMetaData: Metadata = {
   metadataBase: new URL(siteUrl ?? ""),
   title: siteTitle,
   description: siteDescription,
   keywords: siteKeywords,
-  authors: [{ name: 'OSA' }],
+  authors: [{ name: 'Alaa Elsareaa' }],
   robots: {
     index: true,
     follow: true,
@@ -54,38 +54,35 @@ export const OSAMetaData: Metadata = {
     images: [ogImage],
   },
   icons: {
-    icon: '/osa/favicon.ico',
-    apple: '/osa/apple-icon.png',
+    icon: '/alaa-elsareaa/favicon.ico',
+    apple: '/alaa-elsareaa/apple-icon.png',
   },
   other: {
     'geo.region': 'EG',
-    'geo.placename': 'Cairo, Egypt',
-    'geo.position': '30.0444;31.2357',
-    'ICBM': '30.0444, 31.2357',
+    'geo.placename': 'Benha, Egypt',
+    'geo.position': '30.4667;31.1867',
+    'ICBM': '30.4667, 31.1867',
     'language': 'Arabic',
     'revisit-after': '7 days',
   },
 }
-export const metadata: Metadata = OSAMetaData;
+export const metadata: Metadata = AlaaElsareaaMetaData;
 
 // JSON-LD Structured Data
-export const OSAJsonLd = {
+export const AlaaElsareaaJsonLd = {
   organization: {
     '@context': 'https://schema.org',
-    '@type': 'Store',
+    '@type': 'AutoRental',
     '@id': siteUrl,
     name: siteName,
     description: siteDescription,
     url: siteUrl,
-    logo: `/osa/logo.webp`,
+    logo: `/alaa-elsareaa/logo.webp`,
     image: ogImage,
-    telephone: '+201124525753',
-    email: 'info@osa-eyewear.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Cairo',
-      addressLocality: 'Cairo',
-      addressRegion: 'Cairo Governorate',
+      addressLocality: 'Benha',
+      addressRegion: 'Qalyubia Governorate',
       addressCountry: 'EG',
     },
     areaServed: {
@@ -109,26 +106,6 @@ export const OSAJsonLd = {
       },
       'query-input': 'required name=search_term_string',
     },
-  },
-  product: {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'نظارات وعدسات لاصقة',
-    description: 'مجموعة واسعة من النظارات الطبية والشمسية والعدسات اللاصقة',
-    brand: {
-      '@type': 'Brand',
-      name: siteName,
-    },
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'EGP',
-      availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'Organization',
-        name: siteName,
-      },
-    },
-    category: 'نظارات وعدسات',
   },
   breadcrumb: {
     '@context': 'https://schema.org',
@@ -156,7 +133,7 @@ export default function Layout({
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(OSAJsonLd.organization),
+          __html: JSON.stringify(AlaaElsareaaJsonLd.organization),
         }}
       />
 
@@ -165,16 +142,7 @@ export default function Layout({
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(OSAJsonLd.webSite),
-        }}
-      />
-
-      <Script
-        id="product-ld"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(OSAJsonLd.product),
+          __html: JSON.stringify(AlaaElsareaaJsonLd.webSite),
         }}
       />
 
@@ -183,7 +151,7 @@ export default function Layout({
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(OSAJsonLd.breadcrumb),
+          __html: JSON.stringify(AlaaElsareaaJsonLd.breadcrumb),
         }}
       />
       {children}

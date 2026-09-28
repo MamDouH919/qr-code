@@ -17,21 +17,18 @@ import BranchLocations from "@/components/_branches";
 import { BackgroundContainer, BackgroundImage, Overlay, ProfileImage, ProfileImageContainer, ProfileName, Spacer } from "@/components/PageStyles";
 import LanguageIcon from "@/components/LanguageIcon";
 import Footer from "@/components/Footer";
-import SaveContact from "@/components/AddToContact";
 
 import Description from "@/components/Description";
 import Apps from "@/components/Apps";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 /* ---------------- styled components ---------------- */
 
 
 /* ---------------- page component ---------------- */
 
-const folderName = "osa";
+const folderName = "alaa-elsareaa";
 
-const OSAPage = () => {
+const AlaaElsareaaPage = () => {
     const [ready, setReady] = useState(false);
     const [language, setLanguage] = useState("ar");
 
@@ -109,4 +106,4 @@ const OSAPage = () => {
     );
 };
 
-export default OSAPage;
+export default AlaaElsareaaPage;

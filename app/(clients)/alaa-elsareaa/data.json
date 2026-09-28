@@ -19,6 +19,14 @@
         
     ],
     "branches": [
-        
+        {
+            "branchName": {
+                "ar": "بنها",
+                "en": "Benha"
+            },
+            "numbers": [
+
+            ]
+        }
     ]
 }
