@@ -16,6 +16,14 @@ import { resolveSlug } from "@/lib/visitors";
  * request instead, and the entry is dropped once it settles so a fresh mount
  * always asks for the current number.
  */
+function referrerHost(): string | undefined {
+    try {
+        return document.referrer ? new URL(document.referrer).hostname : undefined;
+    } catch {
+        return undefined;
+    }
+}
+
 const inFlight = new Map<string, Promise<number | null>>();
 
 function countVisit(slug: string): Promise<number | null> {
@@ -25,7 +33,13 @@ function countVisit(slug: string): Promise<number | null> {
     const request = fetch("/api/visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug }),
+        body: JSON.stringify({
+            slug,
+            // Where the visit came from: ?src=table-4 on a printed QR, the referring site, the browser language.
+            source: new URLSearchParams(window.location.search).get("src") ?? undefined,
+            referrer: referrerHost(),
+            language: navigator.language,
+        }),
     })
         .then((response) => (response.ok ? response.json() : null))
         .then((data) => (data && typeof data.count === "number" ? (data.count as number) : null))

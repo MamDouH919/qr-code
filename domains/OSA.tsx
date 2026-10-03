@@ -5,8 +5,8 @@ import { Suspense } from "react"
 import Script from "next/script"
 import "../app/globals.css"
 import { Cairo } from "next/font/google"
-import OSAPage from "@/app/(clients)/osa/page"
-import { OSAJsonLd } from "@/app/(clients)/osa/layout"
+import OSAPage from "@/app/ــ(clients)/osa/page"
+import { OSAJsonLd } from "@/app/ــ(clients)/osa/layout"
 
 const cairo = Cairo({
     weight: ["600", "700", "800"],

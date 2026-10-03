@@ -1,10 +1,12 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import { Box, Button, Container, Typography, styled } from '@mui/material';
 import { ArrowForward } from '@mui/icons-material';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ourClients } from '@/lib/clients';
+import { ourClients, type Client } from '@/lib/clients';
 
 // Styled Components
 const ScrollContainer = styled(Box)(({ theme }) => ({
@@ -81,13 +83,20 @@ const ImageCard = styled(Box)(({ theme }) => ({
 export { ourClients };
 
 const CustomerImagesSection = () => {
+    // The backend is the source of truth; the static list shows until it answers and covers it being down or empty.
+    const [clients, setClients] = useState<Client[]>(ourClients);
+
+    useEffect(() => {
+        fetch('/api/clients')
+            .then((res) => (res.ok ? res.json() : []))
+            .then((data: Client[]) => {
+                if (Array.isArray(data) && data.length) setClients(data);
+            })
+            .catch(() => { /* keep the static list */ });
+    }, []);
+
     // Duplicate the array multiple times to create seamless infinite scroll
-    const duplicatedImages = [
-        ...ourClients,
-        ...ourClients,
-        ...ourClients,
-        ...ourClients,
-    ];
+    const duplicatedImages = [...clients, ...clients, ...clients, ...clients];
 
     return (
         <Box sx={{ py: { xs: 6, md: 10 } }} id="clients">

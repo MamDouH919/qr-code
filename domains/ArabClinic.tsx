@@ -5,8 +5,8 @@ import { Suspense } from "react"
 import Script from "next/script"
 import "../app/globals.css"
 import { Cairo } from "next/font/google"
-import { ArabClinicJsonLd } from "@/app/(clients)/arab-clinic/layout"
-import ArabClinicPage from "@/app/(clients)/arab-clinic/page"
+import { ArabClinicJsonLd } from "@/app/ــ(clients)/arab-clinic/layout"
+import ArabClinicPage from "@/app/ــ(clients)/arab-clinic/page"
 
 const cairo = Cairo({
     weight: ["600", "700", "800"],

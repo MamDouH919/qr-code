@@ -11,10 +11,10 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { headers } from "next/headers"
 import VisitorCounter from "@/components/VisitorCounter"
 import ArabClinicLayout from "@/domains/ArabClinic"
-import { ArabClinicMetaData } from "./(clients)/arab-clinic/layout"
+import { ArabClinicMetaData } from "./ــ(clients)/arab-clinic/layout"
 import DrCoffeeLayout from "@/domains/DrCoffee"
-import { DrCoffeeMetaData } from "./(clients)/dr-coffee/layout"
-import { OSAMetaData } from "./(clients)/osa/layout"
+import { DrCoffeeMetaData } from "./ــ(clients)/dr-coffee/layout"
+import { OSAMetaData } from "./ــ(clients)/osa/layout"
 import OSALayout from "@/domains/OSA"
 
 const cairo = Cairo({
