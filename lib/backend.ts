@@ -81,3 +81,31 @@ export async function fetchClientList(): Promise<BackendClientSummary[] | null> 
         return null;
     }
 }
+
+export type BackendClientStats = {
+    id: string;
+    name: string;
+    src: string;
+    total: number;
+    /** Visits per day, oldest first, aligned with `days`. */
+    byDay: number[];
+};
+
+/** Visitor counts for every active client. Returns null when the backend is unavailable. */
+export async function fetchClientStats(days: number): Promise<{ days: string[]; clients: BackendClientStats[] } | null> {
+    const base = backendUrl();
+    if (!base) return null;
+
+    try {
+        const res = await fetch(`${base}/public/stats?days=${days}`, {
+            // Counts change on every scan.
+            cache: "no-store",
+            signal: AbortSignal.timeout(5000),
+        });
+        if (!res.ok) return null;
+        const data = await res.json();
+        return Array.isArray(data?.clients) && Array.isArray(data?.days) ? data : null;
+    } catch {
+        return null;
+    }
+}

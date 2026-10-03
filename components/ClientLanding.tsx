@@ -75,9 +75,6 @@ export default function ClientLanding({ data }: { data: BackendClient }) {
     const galleries = data.galleries.filter((g) => g.images.length > 0);
     const hasApps = !!(data.apps?.ios || data.apps?.android);
 
-    console.log({galleries,data});
-    
-
     return (
         <CacheProvider value={cache}>
             <ThemeProvider theme={theme}>
