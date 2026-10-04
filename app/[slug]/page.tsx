@@ -43,5 +43,5 @@ export default async function ClientPage({ params }: Props) {
     const { slug } = await params;
     const data = await fetchClientPage(slug);
     if (!data) notFound();
-    return <ClientLanding data={data} />;
+    return <ClientLanding data={data} slug={slug} />;
 }

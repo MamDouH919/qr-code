@@ -28,6 +28,7 @@ import {
     ProfileName,
     Spacer,
 } from "@/components/PageStyles";
+import DrDaliaForm from "./DrDaliaForm";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const ARABIC = /[؀-ۿ]/;
@@ -44,7 +45,7 @@ function pick(value: BackendClient["description"], language: Lang): string {
  * The one landing page every client shares, drawn from what the dashboard stores.
  * Sections appear only when the client has content for them.
  */
-export default function ClientLanding({ data }: { data: BackendClient }) {
+export default function ClientLanding({ data, slug }: { data: BackendClient; slug: string }) {
     // Pages with Arabic content open right-to-left; English-only ones left-to-right.
     const startLanguage: Lang = useMemo(
         () => (ARABIC.test(`${data.name}${pick(data.description, "ar")}${data.role}`) || data.multiLanguage ? "ar" : "en"),
@@ -108,7 +109,7 @@ export default function ClientLanding({ data }: { data: BackendClient }) {
                         )}
 
                         <Description description={pick(data.description, language)} />
-
+                        {slug === "dr-dalia" && <DrDaliaForm />}
                         {data.autoReplyWhatsapp && <AutoReplyWhatsapp language={language} number={data.autoReplyWhatsapp} />}
 
                         <SocialMediaLinks links={data.socials} />
