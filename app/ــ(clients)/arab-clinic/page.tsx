@@ -18,9 +18,8 @@ function plainDescription(d: string | { ar?: string; en?: string }): string {
     return text.length > 200 ? `${text.slice(0, 197)}…` : text;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { slug } = await params;
-    const data = await fetchClientPage(slug);
+export async function generateMetadata(): Promise<Metadata> {
+    const data = await fetchClientPage("arab-clinic");
     if (!data) return { title: "Page not found", robots: { index: false } };
 
     const title = data.role ? `${data.name} | ${data.role}` : data.name;
@@ -39,9 +38,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default async function ClientPage({ params }: Props) {
-    const { slug } = await params;
-    const data = await fetchClientPage(slug);
+export default async function ClientPage() {
+    const data = await fetchClientPage("arab-clinic");
     if (!data) notFound();
-    return <ClientLanding data={data} slug={slug} />;
+    return <ClientLanding data={data} slug={"arab-clinic"} />;
 }
