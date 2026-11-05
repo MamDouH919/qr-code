@@ -29,6 +29,7 @@ import {
     Spacer,
 } from "@/components/PageStyles";
 import DrDaliaForm from "./DrDaliaForm";
+import ArabClinicReviewDialog from "./ArabClinicReviewDialog";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const ARABIC = /[؀-ۿ]/;
@@ -110,6 +111,7 @@ export default function ClientLanding({ data, slug }: { data: BackendClient; slu
 
                         <Description description={pick(data.description, language)} />
                         {slug === "dr-dalia" && <DrDaliaForm />}
+                        {slug === "arab-clinic" && <ArabClinicReviewDialog language={language} />}
                         {data.autoReplyWhatsapp && <AutoReplyWhatsapp language={language} number={data.autoReplyWhatsapp} />}
 
                         <SocialMediaLinks links={data.socials} />
