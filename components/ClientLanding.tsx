@@ -15,6 +15,7 @@ import Description from "@/components/Description";
 import GalleryCarousel from "@/components/FanceBox";
 import PepoGallery from "@/components/PepoGallery";
 import Footer from "@/components/Footer";
+import PromoBanner from "@/components/PromoBanner";
 import LanguageIcon from "@/components/LanguageIcon";
 import SaveContact from "@/components/AddToContact";
 import SocialMediaLinks from "@/components/Social";
@@ -135,6 +136,8 @@ export default function ClientLanding({ data, slug }: { data: BackendClient; slu
                         ))}
 
                         {data.branches.length > 0 && <BranchLocations branches={data.branches} splitCode={data.countryCode} />}
+
+                        <PromoBanner slug={slug} />
 
                         <Footer />
                     </Stack>
